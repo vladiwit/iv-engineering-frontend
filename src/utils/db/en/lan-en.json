@@ -1,0 +1,22 @@
+{
+  "head": "Creating media strustures in systems for data transfering ",
+  "pain": "Integration all media servises into unify structure is possible only with SCS",
+  "subhead": ["Solutions for next directions", "In border"],
+  "solutions": [
+    "Architecture of networks - Creating new and и improvement existing netwirks, creating unified environment at the physical level",
+    "Integration of voice, data, video, security systems, access control, video surveillance and other systems into overall structure",
+    "  System virtualization, organization of remote jobs, integration with cloud resources",
+
+    "solution for data-centres with high-capacity elements",
+    "Itegration with cloud technologies",
+    "World tred solution"
+  ],
+  "works": [
+    "Project documentation",
+    "Mounting",
+    "Testing",
+    "Warranty",
+    "Service",
+    "Everywhere"
+  ]
+}

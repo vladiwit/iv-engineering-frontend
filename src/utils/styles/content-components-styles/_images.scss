@@ -1,0 +1,70 @@
+.images {
+  display: block;
+  width: 90%;
+  height: auto;
+  margin:  auto;
+  padding-left: 10px;
+  transform: scale(1);
+  animation: animate100 1300ms  ;
+  &::before{
+    content:"scale(0)";
+  }
+}
+
+@keyframes animate100 {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.worksImages {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  margin: auto;
+}
+
+@media screen and (min-width: $mobile) {
+  .images {
+    // width: 80%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .images {
+    width: 40%;
+    height: auto;
+  border-left: $accent-secondary-color 1px solid;
+
+  }
+
+  .worksImages {
+    display: block;
+    width: 90%;
+    max-width: 350px;
+  height: 250px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .images {
+    width: 40%;
+    height: auto;
+    margin: 25px auto;
+  }
+
+  .worksImages {
+    display: block;
+    width: 90%;
+  }
+}

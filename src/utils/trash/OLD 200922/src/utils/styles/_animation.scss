@@ -1,0 +1,13 @@
+// @import 'styles/main.scss';
+
+.appear{
+  // transform: translateX(-100%);
+  opacity: 0;
+}
+.appearActive{
+  // transform: translateX(0);
+  opacity: 1;
+  // transition: all  3000ms $timing-function;
+  transition: all  1000ms linear;
+
+}

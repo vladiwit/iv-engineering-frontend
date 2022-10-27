@@ -1,0 +1,43 @@
+@import 'utils/styles/main.scss';
+
+.header{
+    // box-sizing: border-box;
+    // margin-bottom: 30px;
+    border-bottom: 1px solid #2a363b;
+    shadow: 3px #606060 ;
+    background-color: black;
+}
+
+.logo{
+    box-sizing: border-box;
+    color: $accent-primary-color;
+    margin: 5px  20px 20px;
+  font-size: 14px;
+
+}
+
+@media screen and (min-width: $mobile) {
+    .logo{
+        margin: 10px  20px 20px;
+  font-size: 14px;
+
+
+    }
+  }
+  
+  @media screen and (min-width: $tablet) {
+    .logo {
+        margin: 15px  30px 25px;
+
+  font-size: 22px;
+
+    }
+  }
+  
+  @media screen and (min-width: $desktop) {
+    .logo {
+        margin: 20px  50px 25px;
+  font-size: 28px;
+
+    }
+  }
