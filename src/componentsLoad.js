@@ -103,6 +103,12 @@ const componentsLoad = {
         'content-components/WindTurbines'
       ) /* webpackChunkName:"WindTurbines"*/,
   ),
+  ElectricDirection: lazy(
+    () =>
+      import(
+        'content-components/ElectricDirection'
+      ) /* webpackChunkName:"ElectricDirection"*/,
+  ),
   Lighting: lazy(
     () =>
       import('content-components/Lighting') /* webpackChunkName:"Lighting" */,

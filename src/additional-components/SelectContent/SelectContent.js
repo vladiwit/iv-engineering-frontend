@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import routes from 'routes';
 import componentsLoad from '../../componentsLoad';
 import CloseButton from 'tools/CloseButton';
-import ElectricDirection from '../../content-components/ElectricDeirection';
+import ElectricDirection from '../../content-components/ElectricDirection';
 
 export default function SelectContent(props) {
   const {
@@ -49,7 +49,8 @@ export default function SelectContent(props) {
             {path.hash === hashes[6] && <AccessSystems />}
             {path.hash === hashes[7] && <FireSystems />}
             {path.hash === hashes[8] && <ThunderStormSystem />}
-            {path.hash === hashes[9] && <ElectricDirection />}
+            {path.hash === hashes[9] && <NotFoundPage />}
+            {/* {path.hash === hashes[9] && <ElectricDirection />} */}
             {path.hash === hashes[10] && <WindTurbines />}
             {path.hash === hashes[11] && <Lighting />}
             {path.hash === hashes[12] && <SolarEnergy />}
