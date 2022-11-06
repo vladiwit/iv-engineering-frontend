@@ -6,16 +6,19 @@ import { getSavedPrevPath } from 'redux/content/content-selectors';
 import { NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { savedPrevPath, detailsAction } from 'redux/content/content-actions';
-import { submitContactError } from 'redux/submit/submit-actions';
+import operations from 'redux/submit/submit-operations';
 import removeContentStorage from 'tools/removeLocalStorageContent';
 
 export default function CloseButton(children) {
+  const { clearSubmitStatusOperation } = operations;
+
   const dispatch = useDispatch();
   const closeShowDetails = useCallback(
     value => dispatch(detailsAction(value)),
     [dispatch],
   );
-  const clearSubmitStatus = value => dispatch();
+  const clearSubmitStatus = value =>
+    dispatch(clearSubmitStatusOperation(value));
   const savePath = useCallback(
     value => dispatch(savedPrevPath(value)),
     [dispatch],
@@ -25,7 +28,7 @@ export default function CloseButton(children) {
     closeShowDetails(value);
     savePath(value);
     removeContentStorage();
-    dispatch(submitContactError(value));
+    clearSubmitStatus('idle');
   };
   return (
     <>

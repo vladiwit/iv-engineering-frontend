@@ -1,13 +1,17 @@
 import axios from 'axios';
 import * as actions from './submit-actions';
-const { submitContactRequest, submitContactSuccess, submitContactError } =
-  actions;
+const {
+  submitContactRequest,
+  submitContactSuccess,
+  submitContactError,
+  clearSubmitStatusAction,
+} = actions;
 
 axios.defaults.baseURL =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000/api/contacts'
-    : 'https://iv-engineering.herokuapp.com/api/contacts';
-
+  // process.env.NODE_ENV === 'development'
+  //   ? 'http://localhost:3000/api/contacts'
+  //   : 'https://iv-engineering.herokuapp.com/api/contacts';
+  'https://iv-engineering.herokuapp.com/api/contacts';
 const addContact = contact => async dispatch => {
   const newContact = { ...contact, from: 'iv-engineering' };
   dispatch(submitContactRequest());
@@ -16,7 +20,13 @@ const addContact = contact => async dispatch => {
 
     dispatch(submitContactSuccess(data.status));
   } catch (error) {
+    console.log('ERROR_MESSAGEIN OPERATIONS::🅰️:::', error.message);
     dispatch(submitContactError(error.message));
   }
 };
-export default addContact;
+
+const clearSubmitStatusOperation = value => dispatch => {
+  dispatch(clearSubmitStatusAction(value));
+};
+
+export default { addContact, clearSubmitStatusOperation };

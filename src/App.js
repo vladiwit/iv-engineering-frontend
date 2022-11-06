@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router';
 import { Suspense, useCallback, useEffect, useState } from 'react';
 import routes from './routes';
 import componentsLoad from './componentsLoad';
-import { getSubmitStatusSelector } from './redux/submit/submit-selectors';
+import getSubmitStatusSelector from './redux/submit/submit-selectors';
 import { useSelector } from 'react-redux';
 import SuccessSubmitPage from 'views/SuccessSubmitPage';
 import ErrorSubmitPage from 'views/ErrorSubmitPage';
@@ -40,7 +40,7 @@ const App = () => {
     <div style={styles}>
       <Suspense fallback={<h2>Loading...</h2>}>
         {responseSubmit === 'success' && <SuccessSubmitPage />}
-        {responseSubmit === 'error' && <ErrorSubmitPage />}
+        {responseSubmit === 'Network Error' && <ErrorSubmitPage />}
         {responseSubmit === 'idle' && (
           <Routes>
             <Route path={systems} element={<DetailsPage />}>

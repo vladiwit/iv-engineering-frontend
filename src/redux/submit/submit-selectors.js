@@ -1,1 +1,2 @@
-export const getSubmitStatusSelector = state => state.submit;
+const getSubmitStatusSelector = state => state.submit;
+export default getSubmitStatusSelector;

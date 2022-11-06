@@ -4,15 +4,16 @@ import SubmitButton from './SubmitButton';
 import FormSubmit from './FormSubmit';
 import s from './Submit.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import addSubmit from '../../redux/submit/submit-operations';
+import operations from '../../redux/submit/submit-operations';
 const { Modal } = Modals;
 
 export default function Submit() {
+  const { addContact } = operations;
   const dispatch = useDispatch();
-  const addContact = value => dispatch(addSubmit(value));
+  const addSubmit = value => dispatch(addContact(value));
   const [showModal, setShowModal] = useState(false);
   const submitHandler = data => {
-    addContact(data);
+    addSubmit(data);
     toggleModal();
   };
   const toggleModal = useCallback(() => {
