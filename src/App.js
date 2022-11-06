@@ -5,6 +5,7 @@ import componentsLoad from './componentsLoad';
 import { getSubmitStatusSelector } from './redux/submit/submit-selectors';
 import { useSelector } from 'react-redux';
 import SuccessSubmitPage from 'views/SuccessSubmitPage';
+import ErrorSubmitPage from 'views/ErrorSubmitPage';
 const App = () => {
   const {
     HomePageView,
@@ -29,7 +30,7 @@ const App = () => {
     alternative_energy,
   } = routes;
 
-  const successSubmit = useSelector(getSubmitStatusSelector);
+  const responseSubmit = useSelector(getSubmitStatusSelector);
 
   const styles = {
     overflow: 'hidden',
@@ -38,9 +39,9 @@ const App = () => {
   return (
     <div style={styles}>
       <Suspense fallback={<h2>Loading...</h2>}>
-        {successSubmit === 'success' && <SuccessSubmitPage />}
-
-        {successSubmit !== 'success' && (
+        {responseSubmit === 'success' && <SuccessSubmitPage />}
+        {responseSubmit === 'error' && <ErrorSubmitPage />}
+        {responseSubmit === 'idle' && (
           <Routes>
             <Route path={systems} element={<DetailsPage />}>
               <Route

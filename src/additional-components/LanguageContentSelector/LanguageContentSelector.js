@@ -14,11 +14,11 @@ import windRu from 'utils/db/ru/wind-ru.json';
 import lightingRu from 'utils/db/ru/lighting-ru.json';
 import solidFuelRu from 'utils/db/ru/solidFuelHeating-ru.json';
 import solarEnergyRu from 'utils/db/ru/solarEnergy-ru.json';
-
 import aboutRu from 'utils/db/ru/about-ru.js';
 import submitRu from 'utils/db/ru/submit-ru.json';
 import submitFormRu from 'utils/db/ru/submitForm-ru.json';
 import gratefulLetterRu from 'utils/db/ru/gratefulLetter-ru.js';
+import alertSubmitRu from 'utils/db/ru/alertSubmit-ru.js';
 import footerRu from 'utils/db/ru/footer-ru.json';
 
 import heroEn from 'utils/db/en/hero-en.json';
@@ -41,6 +41,7 @@ import aboutEn from '../../utils/db/en/about-en.js';
 import submitEn from 'utils/db/en/submit-en.json';
 import submitFormEn from 'utils/db/en/submitForm-en.json';
 import gratefulLetterEn from 'utils/db/en/gratefulLetter-en.js';
+import alertSubmitEn from 'utils/db/en/alertSubmit-en.js';
 import footerEn from 'utils/db/en/footer-en.json';
 
 import heroUa from 'utils/db/ua/hero-ua.json';
@@ -62,6 +63,7 @@ import aboutUa from 'utils/db/ua/about-ua.js';
 import submitUa from 'utils/db/ua/submit-ua.json';
 import submitFormUa from 'utils/db/ua/submitForm-ua.json';
 import gratefulLetterUa from 'utils/db/ua/gratefulLetter-ua.js';
+import alertSubmitUa from 'utils/db/ua/alertSubmit-ua.js';
 import footerUa from 'utils/db/ua/footer-ua.json';
 import lightingUa from 'utils/db/ua/lighting-ua.json';
 
@@ -87,6 +89,7 @@ const LangContentSelector = currentLanguage => {
     submit: submitRu,
     submitForm: submitFormRu,
     gratefulLetter: gratefulLetterRu,
+    alertSubmit: alertSubmitRu,
     footer: footerRu,
   };
   const en = {
@@ -110,6 +113,7 @@ const LangContentSelector = currentLanguage => {
     submit: submitEn,
     submitForm: submitFormEn,
     gratefulLetter: gratefulLetterEn,
+    alertSubmit: alertSubmitEn,
     footer: footerEn,
   };
   const ua = {
@@ -133,6 +137,7 @@ const LangContentSelector = currentLanguage => {
     submit: submitUa,
     submitForm: submitFormUa,
     gratefulLetter: gratefulLetterUa,
+    alertSubmit: alertSubmitUa,
     footer: footerUa,
   };
   switch (currentLanguage) {

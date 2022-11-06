@@ -15,6 +15,7 @@ export default function CloseButton(children) {
     value => dispatch(detailsAction(value)),
     [dispatch],
   );
+  const clearSubmitStatus = value => dispatch();
   const savePath = useCallback(
     value => dispatch(savedPrevPath(value)),
     [dispatch],
