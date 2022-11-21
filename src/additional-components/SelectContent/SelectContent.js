@@ -25,7 +25,7 @@ export default function SelectContent(props) {
   const path = pathname.pathname;
 
   const hashes = Object.values(routes);
-  console.log('HASHES IN SELECT_CONTENT:::::::', hashes);
+  // console.log('HASHES IN SELECT_CONTENT:::::::', hashes);
 
   hashes.splice(0, 6);
 

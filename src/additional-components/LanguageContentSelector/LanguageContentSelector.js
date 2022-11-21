@@ -1,8 +1,8 @@
 import heroRu from 'utils/db/ru/hero-ru.json';
 import naviRu from 'utils/db/ru/navigation-ru.json';
-import infornationSystemsRu from 'utils/db/ru/infornationSystems-ru.json';
+import infornationSystemsRu from 'utils/db/ru/infornationSystems-ru.js';
 import securityRu from 'utils/db/ru/securitysystems-ru.json';
-import alternativeEnergyRu from 'utils/db/ru/alternativeEnergy-ru.json';
+import alternativeEnergyRu from 'utils/db/ru/alternativeEnergy-ru.js';
 import lanRu from 'utils/db/ru/lan-ru.json';
 import itsecurityRu from 'utils/db/ru/itsecurity-ru.json';
 import videosurvilanceRu from 'utils/db/ru/videosurvilance-ru.json';
@@ -23,9 +23,9 @@ import footerRu from 'utils/db/ru/footer-ru.json';
 
 import heroEn from 'utils/db/en/hero-en.json';
 import naviEn from 'utils/db/en/navigation-en.json';
-import infornationSystemsEn from 'utils/db/en/infornationSystems-en.json';
+import infornationSystemsEn from 'utils/db/en/infornationSystems-en.js';
 import securityEn from 'utils/db/en/securitysystems-en.json';
-import alternativeEnergyEn from 'utils/db/en/alternativeEnergy-en.json';
+import alternativeEnergyEn from 'utils/db/en/alternativeEnergy-en.js';
 import lanEn from 'utils/db/en/lan-en.json';
 import itsecurityEn from 'utils/db/en/itsecurity-en.json';
 import videosurvilanceEn from 'utils/db/en/videosurvilance-en.json';
@@ -46,9 +46,9 @@ import footerEn from 'utils/db/en/footer-en.json';
 
 import heroUa from 'utils/db/ua/hero-ua.json';
 import naviUa from 'utils/db/ua/navigation-ua.json';
-import infornationSystemsUa from 'utils/db/ua/infornationSystems-ua.json';
+import infornationSystemsUa from 'utils/db/ua/infornationSystems-ua.js';
 import securityUa from 'utils/db/ua/securitysystems-ua.json';
-import alternativeEnergyUa from 'utils/db/ua/alternativeEnergy-ua.json';
+import alternativeEnergyUa from 'utils/db/ua/alternativeEnergy-ua.js';
 import lanUa from 'utils/db/ua/lan-ua.json';
 import itsecurityUa from 'utils/db/ua/itsecurity-ua.json';
 import videosurvilanceUa from 'utils/db/ua/videosurvilance-ua.json';

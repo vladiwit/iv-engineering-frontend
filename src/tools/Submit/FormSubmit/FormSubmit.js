@@ -76,7 +76,7 @@ const FormSubmit = ({ onSubmit }) => {
 
     onSubmit({
       name,
-      tel,
+      // tel,
       email,
       // direction,
       licence,
