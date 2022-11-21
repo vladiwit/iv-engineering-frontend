@@ -20,7 +20,7 @@ const addContact = contact => async dispatch => {
 
     dispatch(submitContactSuccess(data.status));
   } catch (error) {
-    console.log('ERROR_MESSAGEIN OPERATIONS::🅰️:::', error.message);
+    // console.log('ERROR_MESSAGEIN OPERATIONS::🅰️:::', error.message);
     dispatch(submitContactError(error.message));
   }
 };
