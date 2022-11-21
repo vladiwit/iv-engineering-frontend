@@ -6,6 +6,7 @@ import getSubmitStatusSelector from './redux/submit/submit-selectors';
 import { useSelector } from 'react-redux';
 import SuccessSubmitPage from 'views/SuccessSubmitPage';
 import ErrorSubmitPage from 'views/ErrorSubmitPage';
+import LoaderModule from 'tools/LoaderModule';
 const App = () => {
   const {
     HomePageView,
@@ -36,12 +37,31 @@ const App = () => {
     overflow: 'hidden',
   };
 
+  const alarmStyles = {
+    fontSize: '24px',
+    textAlign: 'center',
+    margin: '150px auto',
+    color: '#00BFFF',
+  };
   return (
     <div style={styles}>
-      <Suspense fallback={<h2>Loading...</h2>}>
-        {responseSubmit === 'success' && <SuccessSubmitPage />}
-        {responseSubmit === 'Network Error' && <ErrorSubmitPage />}
-        {responseSubmit === 'idle' && (
+      {responseSubmit === 'success' && <SuccessSubmitPage />}
+      {responseSubmit === 'Network Error' && <ErrorSubmitPage />}
+      {responseSubmit === 'Loading' && (
+        <div style={alarmStyles}>
+          <h3>Server connection </h3>
+          <LoaderModule />
+        </div>
+      )}
+      {responseSubmit === 'idle' && (
+        <Suspense
+          fallback={
+            <div style={alarmStyles}>
+              <h3>Loading</h3>
+              <LoaderModule />
+            </div>
+          }
+        >
           <Routes>
             <Route path={systems} element={<DetailsPage />}>
               <Route
@@ -95,8 +115,8 @@ const App = () => {
             <Route path={main} element={<HomePageView />} />
             <Route path={'*'} element={<NotFoundPage />} />
           </Routes>
-        )}
-      </Suspense>
+        </Suspense>
+      )}
     </div>
   );
 };
