@@ -34,6 +34,7 @@ export default function Hero() {
         <h1 key="title" className={`{title} ${s.heroSubtitle}`}>
           {hero.title}
         </h1>
+        {/* <h2 className={s.subtitle}>{hero.subtitle}</h2> */}
       </div>
       <CSSTransition
         in={true}
