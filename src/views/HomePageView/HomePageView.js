@@ -8,11 +8,13 @@ import heroImages from '../../utils/db/images-db/hero-images.js';
 
 export default function HomePageView() {
   return (
-    <div className={s.homepage}>
-      <Slider images={heroImages} />;
-      <Lang />
-      <Hero />
+    <>
+      <div className={s.homepage}>
+        <Slider images={heroImages} />;
+        <Lang />
+        <Hero />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
