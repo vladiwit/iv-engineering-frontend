@@ -1,16 +1,15 @@
 import s from './CommentsForm.module.scss';
-import shortid from 'shortid'; //https://www.npmjs.com/package/shortid
 import sprite from 'utils/db/img/sprite.svg';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import LangContentSelector from '../../../../additional-components/LanguageContentSelector';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import getID from 'tools/getID';
 
 export default function CommentsForm({ comment, handleChange }) {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { submitForm } = LangContentSelector(currentLanguage);
-
-  const commentsInputId = shortid.generate();
+  const commentsInputId = getID();
 
   return (
     <div>

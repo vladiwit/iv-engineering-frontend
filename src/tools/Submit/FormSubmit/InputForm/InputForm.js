@@ -1,18 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import s from './InputForm.module.scss';
-import shortid from 'shortid'; //https://www.npmjs.com/package/shortid
 import sprite from 'utils/db/img/sprite.svg';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import LangContentSelector from '../../../../additional-components/LanguageContentSelector';
+import getID from 'tools/getID';
 
 export default function InputForm({ name, email, tel, handleChange }) {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { submitForm } = LangContentSelector(currentLanguage);
   // const telInputId = shortid.generate();
-  const nameInputId = shortid.generate();
+  const nameInputId = getID();
   // const commentsInputId = shortid.generate();
-  const emailInputId = shortid.generate();
+  const emailInputId = getID();
 
   return (
     <div>
