@@ -27,14 +27,14 @@ export default function LanguageButton() {
       >
         EN
       </button>
-      <button
+      {/* <button
         type="button"
         className={s.selectButton}
         onClick={e => setCurrentLanguage(e.target.outerText)}
         disabled={currentLanguage === 'RU'}
       >
         RU
-      </button>
+      </button> */}
     </div>
   );
 }
