@@ -1,5 +1,5 @@
 import s from './ThunderStormSystem.module.scss';
-import React from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Submit from 'tools/Submit';
 import images from '../../utils/db/images-db/thunder';
@@ -9,8 +9,35 @@ import getID from 'tools/getID';
 
 export default function ThunderStormSystem() {
   const currentLanguage = useSelector(getLanguageMemoised);
-
   const { thunder } = LangContentSelector(currentLanguage);
+
+  // -------------------------IO---------------------------
+  const cb = entries => {
+    // console.log('ENRTIES IN CB::::::', entries);
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(`${s.active}`);
+        // observer.unobserve(entry);
+      }
+    });
+  };
+
+  const options = {
+    // rootMargin: '-200px',
+    // threshold: 0.3,
+  };
+
+  const observer = new IntersectionObserver(cb, options);
+
+  useEffect(() => {
+    const targets = document.querySelectorAll(`.${s.contentItems}`);
+    // console.log('TARGET_ARRAY:::::', targets);
+
+    targets.forEach(target => observer.observe(target));
+  }, []);
+
+  // ---------------------------------------------------------------
+
   return (
     <section className={s.thunder}>
       <h2 className={s.heads}>{thunder.head}</h2>

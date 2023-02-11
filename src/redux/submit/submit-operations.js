@@ -8,10 +8,10 @@ const {
 } = actions;
 
 axios.defaults.baseURL =
-  // process.env.NODE_ENV === 'development'
-  // ? 'http://localhost:3000/api/contacts'
-  // : 'https://app.buddy.works/iv-en/iv-en-backend/api/contacts';
-  'https://iv-engineering.herokuapp.com/api/contacts';
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000/api/contacts'
+    : 'https://app.buddy.works/iv-en/iv-en-backend/api/contacts';
+// 'https://iv-engineering.herokuapp.com/api/contacts';
 // ('https://app.buddy.works/iv-en/iv-en-backend/api/contacts');
 // // 'https://iv-engineering.herokuapp.com/api/contacts';
 const addContact = contact => async dispatch => {

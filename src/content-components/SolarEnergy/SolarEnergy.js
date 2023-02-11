@@ -1,5 +1,5 @@
 import s from './SolarEnergy.module.scss';
-import React from 'react';
+import { useEffect } from 'react';
 import getID from 'tools/getID';
 import images from '../../utils/db/images-db/solarEnergy-images';
 import LangContentSelector from '../../additional-components/LanguageContentSelector';
@@ -11,6 +11,34 @@ export default function LANContent() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { solarEnergy } = LangContentSelector(currentLanguage);
   const { slide2, slide4, slide5, slide6 } = images;
+
+  // -------------------------IO---------------------------
+  const cb = entries => {
+    // console.log('ENRTIES IN CB::::::', entries);
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(`${s.active}`);
+        // observer.unobserve(entry);
+      }
+    });
+  };
+
+  const options = {
+    // rootMargin: '-200px',
+    // threshold: 0.3,
+  };
+
+  const observer = new IntersectionObserver(cb, options);
+
+  useEffect(() => {
+    const targets = document.querySelectorAll(`.${s.contentItems}`);
+    // console.log('TARGET_ARRAY:::::', targets);
+
+    targets.forEach(target => observer.observe(target));
+  }, []);
+
+  // ---------------------------------------------------------------
+
   return (
     <>
       <section className={s.solarEnergy}>

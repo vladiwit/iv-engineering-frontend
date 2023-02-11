@@ -1,5 +1,6 @@
 import s from './ElectricDirection.module.scss';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import LangContentSelector from '../../additional-components/LanguageContentSelector';
 import Submit from 'tools/Submit';
@@ -8,6 +9,34 @@ import images from 'utils/db/images-db/alarm';
 export default function AlarmSystems() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { alarm } = LangContentSelector(currentLanguage);
+
+  // -------------------------IO---------------------------
+  const cb = entries => {
+    // console.log('ENRTIES IN CB::::::', entries);
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(`${s.active}`);
+        // observer.unobserve(entry);
+      }
+    });
+  };
+
+  const options = {
+    // rootMargin: '-200px',
+    // threshold: 0.3,
+  };
+
+  const observer = new IntersectionObserver(cb, options);
+
+  useEffect(() => {
+    const targets = document.querySelectorAll(`.${s.contentItems}`);
+    // console.log('TARGET_ARRAY:::::', targets);
+
+    targets.forEach(target => observer.observe(target));
+  }, []);
+
+  // ---------------------------------------------------------------
+
   return (
     <section className={s.alarm}>
       <h2 className={s.heads}>{alarm.head}</h2>

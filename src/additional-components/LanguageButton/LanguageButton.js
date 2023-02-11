@@ -15,26 +15,34 @@ export default function LanguageButton() {
         type="button"
         className={s.selectButton}
         onClick={e => setCurrentLanguage(e.target.outerText)}
-        disabled={currentLanguage === 'UA'}
       >
-        UA
+        {currentLanguage === 'UA' ? 'EN' : 'UA'}
       </button>
-      <button
-        type="button"
-        className={s.selectButton}
-        onClick={e => setCurrentLanguage(e.target.outerText)}
-        disabled={currentLanguage === 'EN'}
-      >
-        EN
-      </button>
-      {/* <button
-        type="button"
-        className={s.selectButton}
-        onClick={e => setCurrentLanguage(e.target.outerText)}
-        disabled={currentLanguage === 'RU'}
-      >
-        RU
-      </button> */}
     </div>
   );
 }
+
+// {/* <button
+//         type="button"
+//         className={s.selectButton}
+//         onClick={e => setCurrentLanguage(e.target.outerText)}
+//         disabled={currentLanguage === 'UA'}
+//       >
+//         UA
+//       </button>
+//       <button
+//         type="button"
+//         className={s.selectButton}
+//         onClick={e => setCurrentLanguage(e.target.outerText)}
+//         disabled={currentLanguage === 'EN'}
+//       >
+//         EN
+//       </button>
+//       <button
+//         type="button"
+//         className={s.selectButton}
+//         onClick={e => setCurrentLanguage(e.target.outerText)}
+//         disabled={currentLanguage === 'RU'}
+//       >
+//         RU
+//       </button> */}

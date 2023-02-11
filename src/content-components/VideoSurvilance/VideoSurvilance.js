@@ -1,5 +1,5 @@
 import s from './VideoSurvilance.module.scss';
-import React from 'react';
+import { useEffect } from 'react';
 import LangContentSelector from '../../additional-components/LanguageContentSelector';
 import { useSelector } from 'react-redux';
 import images from '../../utils/db/images-db/cctv';
@@ -8,28 +8,56 @@ import Submit from '../../tools/Submit';
 
 export default function VideoSurvilance() {
   const currentLanguage = useSelector(getLanguageMemoised);
-
   const { videosurvilance } = LangContentSelector(currentLanguage);
+
+  // -------------------------IO---------------------------
+  const cb = entries => {
+    // console.log('ENRTIES IN CB::::::', entries);
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(`${s.active}`);
+        // observer.unobserve(entry);
+      }
+    });
+  };
+
+  const options = {
+    // rootMargin: '-200px',
+    // threshold: 0.3,
+  };
+
+  const observer = new IntersectionObserver(cb, options);
+
+  useEffect(() => {
+    const targets = document.querySelectorAll(`.${s.videoItems}`);
+    // const targets = document.querySelectorAll(`.${s.contentItems}`);
+    console.log('TARGET_ARRAY:::::', targets);
+
+    targets.forEach(target => observer.observe(target));
+  }, []);
+
+  // ---------------------------------------------------------------
+
   return (
     <section className={s.cctv}>
       <h2 className={s.heads}>{videosurvilance.head}</h2>
       <p className={s.pain}>{videosurvilance.pain}</p>
       <b className={s.subhead}>{videosurvilance.subhead[0]}</b>
 
-      <ul>
-        <li className={s.contentItems}>
+      <ul className={s}>
+        <li className={s.videoItems}>
           <div className={s.itemText}>
-            {/* <p className={s.text}>{videosurvilance.solutions[0]}</p> */}
+            <p className={s.text}>{videosurvilance.solutions[0]}</p>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {videosurvilance.solutions[0]}
             </p>
             <p className={`${s.subheadItems}`}>{videosurvilance.content[0]}</p>
             <Submit />
           </div>
-
           <img className={s.images} src={images[0]} alt="vendors" />
         </li>
-        <li className={s.contentItems}>
+
+        <li className={s.videoItems}>
           <img className={s.images} src={images[1]} alt="vendors" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
