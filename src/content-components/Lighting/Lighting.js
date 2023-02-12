@@ -31,7 +31,7 @@ export default function LANContent() {
   const observer = new IntersectionObserver(cb, options);
 
   useEffect(() => {
-    const targets = document.querySelectorAll(`.${s.contentItems}`);
+    const targets = document.querySelectorAll('.lightItems');
     // console.log('TARGET_ARRAY:::::', targets);
 
     targets.forEach(target => observer.observe(target));
@@ -47,7 +47,7 @@ export default function LANContent() {
         <b className={s.subhead}>{lighting.subhead[0]}</b>
 
         <ul className={s}>
-          <li className={s.contentItems}>
+          <li className={`${s.contentItems} lightItems`}>
             <div className={s.itemText}>
               <p className={`${s.subhead} ${s.subheadItems}`}>
                 {lighting.solutions[0]}
@@ -65,7 +65,7 @@ export default function LANContent() {
             <img src={slide1} className={s.images} alt="content" />
           </li>
 
-          <li className={s.contentItems}>
+          <li className={`${s.contentItems} lightItems`}>
             <img src={slide2} className={s.images} alt="system integration" />
             <div className={s.itemText}>
               <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -83,7 +83,7 @@ export default function LANContent() {
             </div>
           </li>
 
-          <li className={s.contentItems}>
+          <li className={`${s.contentItems} lightItems`}>
             <div className={s.itemText}>
               <p className={`${s.subhead} ${s.subheadItems}`}>
                 {lighting.solutions[2]}

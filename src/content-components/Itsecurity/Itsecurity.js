@@ -28,7 +28,8 @@ export default function Itsecutity() {
   const observer = new IntersectionObserver(cb, options);
 
   useEffect(() => {
-    const targets = document.querySelectorAll(`.${s.contentItems}`);
+    const targets = document.querySelectorAll('.itItems');
+    // const targets = document.querySelectorAll(`.${s.contentItems}`);
     // console.log('TARGET_ARRAY:::::', targets);
 
     targets.forEach(target => observer.observe(target));
@@ -42,7 +43,7 @@ export default function Itsecutity() {
         <h3 className={s.subhead}>{itsecurity.subhead}</h3>
 
         <ul className={s}>
-          <li className={s.contentItems}>
+          <li className={`${s.contentItems} itItems`}>
             <div className={s.itemText}>
               <p className={`${s.subhead} ${s.subheadItems}`}>
                 {itsecurity.solutions[0]}
@@ -52,7 +53,7 @@ export default function Itsecutity() {
             <img className={s.images} src={images[0]} alt="datarestoring" />
           </li>
 
-          <li className={s.contentItems}>
+          <li className={`${s.contentItems} itItems`}>
             <img
               className={s.images}
               src={images[1]}
@@ -66,7 +67,7 @@ export default function Itsecutity() {
             </div>
           </li>
 
-          <li className={s.contentItems}>
+          <li className={`${s.contentItems} itItems`}>
             <div className={s.itemText}>
               <p className={`${s.subhead} ${s.subheadItems}`}>
                 {itsecurity.solutions[2]}
@@ -79,7 +80,7 @@ export default function Itsecutity() {
               alt="preventing intrusions"
             />
           </li>
-          <li className={s.contentItems}>
+          <li className={`${s.contentItems} itItems`}>
             <img className={s.images} src={images[3]} alt="" />
             <div className={s.itemText}>
               <p className={`${s.subhead} ${s.subheadItems}`}>

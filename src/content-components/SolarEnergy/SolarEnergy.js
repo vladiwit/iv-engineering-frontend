@@ -31,7 +31,7 @@ export default function LANContent() {
   const observer = new IntersectionObserver(cb, options);
 
   useEffect(() => {
-    const targets = document.querySelectorAll(`.${s.contentItems}`);
+    const targets = document.querySelectorAll('.solarItems');
     // console.log('TARGET_ARRAY:::::', targets);
 
     targets.forEach(target => observer.observe(target));
@@ -65,7 +65,7 @@ export default function LANContent() {
             <img src={slide1} className={s.images} alt="content" />
           </li> */}
 
-          <li className={s.contentItems}>
+          <li className={`${s.contentItems} solarItems`}>
             <img src={slide2} className={s.images} alt="system integration" />
             <div className={s.itemText}>
               <p className={`${s.subhead} ${s.subheadItems}`}>

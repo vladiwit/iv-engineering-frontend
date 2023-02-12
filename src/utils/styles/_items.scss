@@ -10,26 +10,6 @@
 }
 
 
-.active{
-  transform: scale(1);
-  animation: animate100 800ms linear ;
-}
-
-
-@keyframes animate100 {
-  0% {
-    transform: scale(0);
-  }
-
-  30% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 
 
 

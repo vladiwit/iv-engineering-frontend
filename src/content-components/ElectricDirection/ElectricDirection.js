@@ -29,7 +29,7 @@ export default function AlarmSystems() {
   const observer = new IntersectionObserver(cb, options);
 
   useEffect(() => {
-    const targets = document.querySelectorAll(`.${s.contentItems}`);
+    const targets = document.querySelectorAll('.elItems');
     // console.log('TARGET_ARRAY:::::', targets);
 
     targets.forEach(target => observer.observe(target));
@@ -43,7 +43,7 @@ export default function AlarmSystems() {
       <p className={s.pain}>{alarm.pain}</p>
       <b className={s.subhead}>{alarm.subhead[0]}</b>
       <ul>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} elItems`}>
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {alarm.content[0]}
@@ -53,7 +53,7 @@ export default function AlarmSystems() {
           </div>
           <img className={s.images} src={images[0]} alt="" />
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} elItems`}>
           <img className={s.images} src={images[1]} alt="" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -63,7 +63,7 @@ export default function AlarmSystems() {
             <Submit />
           </div>
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} elItems`}>
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {alarm.content[2]}

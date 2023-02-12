@@ -29,9 +29,9 @@ export default function VideoSurvilance() {
   const observer = new IntersectionObserver(cb, options);
 
   useEffect(() => {
-    const targets = document.querySelectorAll(`.${s.videoItems}`);
+    const targets = document.querySelectorAll('.videoItems');
     // const targets = document.querySelectorAll(`.${s.contentItems}`);
-    console.log('TARGET_ARRAY:::::', targets);
+    // console.log('TARGET_ARRAY:::::', targets);
 
     targets.forEach(target => observer.observe(target));
   }, []);
@@ -45,9 +45,9 @@ export default function VideoSurvilance() {
       <b className={s.subhead}>{videosurvilance.subhead[0]}</b>
 
       <ul className={s}>
-        <li className={s.videoItems}>
+        <li className={`${s.contentItems} videoItems`}>
           <div className={s.itemText}>
-            <p className={s.text}>{videosurvilance.solutions[0]}</p>
+            {/* <p className={s.text}>{videosurvilance.solutions[0]}</p> */}
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {videosurvilance.solutions[0]}
             </p>
@@ -57,7 +57,7 @@ export default function VideoSurvilance() {
           <img className={s.images} src={images[0]} alt="vendors" />
         </li>
 
-        <li className={s.videoItems}>
+        <li className={`${s.contentItems} videoItems`}>
           <img className={s.images} src={images[1]} alt="vendors" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>

@@ -30,7 +30,7 @@ export default function FireSystems() {
   const observer = new IntersectionObserver(cb, options);
 
   useEffect(() => {
-    const targets = document.querySelectorAll(`.${s.contentItems}`);
+    const targets = document.querySelectorAll('.fireItems');
     // console.log('TARGET_ARRAY:::::', targets);
 
     targets.forEach(target => observer.observe(target));
@@ -43,7 +43,7 @@ export default function FireSystems() {
       <h2 className={s.heads}>{fire.head}</h2>
       <p className={s.pain}>{fire.pain}</p>
       <ul>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} fireItems`}>
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {fire.solutions[0]}
@@ -60,7 +60,7 @@ export default function FireSystems() {
           </div>
           <img className={s.images} src={images[0]} alt="" />
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} fireItems`}>
           {/* <img className={s.fireImages} src={images[1]} alt='' /> */}
           <img className={s.images} src={images[2]} alt="" />
           <div className={s.itemText}>
@@ -73,7 +73,7 @@ export default function FireSystems() {
             <Submit />
           </div>
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} fireItems`}>
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {fire.solutions[2]}

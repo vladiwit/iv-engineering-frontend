@@ -30,7 +30,7 @@ export default function ThunderStormSystem() {
   const observer = new IntersectionObserver(cb, options);
 
   useEffect(() => {
-    const targets = document.querySelectorAll(`.${s.contentItems}`);
+    const targets = document.querySelectorAll('.thunderItems');
     // console.log('TARGET_ARRAY:::::', targets);
 
     targets.forEach(target => observer.observe(target));
@@ -45,7 +45,7 @@ export default function ThunderStormSystem() {
       <p className={s.pain}>{thunder.pain}</p>
 
       <ul className={s}>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} thunderItems`}>
           <div className={s.itemText}>
             <ul className={s.thunderList}>
               {thunder.solutions.map(item => (
@@ -62,7 +62,7 @@ export default function ThunderStormSystem() {
             alt="thunderstorm defender"
           />
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} thunderItems`}>
           <img
             className={s.images}
             src={images[1]}

@@ -15,8 +15,9 @@ export default function AccessSystems() {
   // -------------------------IO---------------------------
   const cb = entries => {
     // console.log('ENRTIES IN CB::::::', entries);
-    entries.forEach((entry, i) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
+        console.log('INTERSECTING:', entry.target);
         entry.target.classList.add(`${s.active}`);
         // observer.unobserve(entry);
       }
@@ -24,15 +25,16 @@ export default function AccessSystems() {
   };
 
   const options = {
-    // rootMargin: '-200px',
+    // rootMargin: '-100px',
     // threshold: 0.3,
   };
 
   const observer = new IntersectionObserver(cb, options);
 
   useEffect(() => {
-    const targets = document.querySelectorAll(`.${s.contentItems}`);
-    // console.log('TARGET_ARRAY:::::', targets);
+    const targets = document.querySelectorAll('.accessItems');
+    // const targets = document.querySelectorAll(`.${s.contentItems}`);
+    console.log('TARGET_ARRAY:::::', targets);
 
     targets.forEach(target => observer.observe(target));
   }, []);
@@ -46,14 +48,14 @@ export default function AccessSystems() {
       <b className={s.subhead}>{access.subhead[0]}</b>
 
       <ul>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} accessItems`}>
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {access.content[0]}
             </p>
             <ul className={s.accessList}>
-              {access.detailsA.map(detail => (
-                <li key={getID()} className={s.text}>
+              {access.detailsA.map((detail, i) => (
+                <li key={i} className={s.text}>
                   <p className={s.textItem}>{detail}</p>
                 </li>
               ))}
@@ -63,7 +65,7 @@ export default function AccessSystems() {
           <img className={s.images} src={images[0]} alt="" />
           {/* <img className={`s.${className}`} src={images[0]} alt="" /> */}
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} accessItems`}>
           <img className={s.images} src={images[1]} alt="" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -79,7 +81,7 @@ export default function AccessSystems() {
             <Submit />
           </div>
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} accessItems`}>
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {access.content[2]}
@@ -89,7 +91,7 @@ export default function AccessSystems() {
           </div>
           <img className={s.images} src={images[2]} alt="" />
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} accessItems`}>
           <img className={s.images} src={images[3]} alt="" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -99,7 +101,7 @@ export default function AccessSystems() {
             <Submit />
           </div>
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} accessItems`}>
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {access.content[4]}
@@ -119,7 +121,7 @@ export default function AccessSystems() {
           </div>
           <img className={s.images} src={images[4]} alt="" />
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} accessItems`}>
           <img className={s.images} src={images[5]} alt="" />
           <div className={s}>
             <p className={`${s.subhead} ${s.subheadItems}`}>

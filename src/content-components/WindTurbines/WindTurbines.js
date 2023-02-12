@@ -29,7 +29,7 @@ export default function WindSystems() {
   const observer = new IntersectionObserver(cb, options);
 
   useEffect(() => {
-    const targets = document.querySelectorAll(`.${s.contentItems}`);
+    const targets = document.querySelectorAll('.windItems');
     // console.log('TARGET_ARRAY:::::', targets);
 
     targets.forEach(target => observer.observe(target));
@@ -47,7 +47,7 @@ export default function WindSystems() {
       </article>
 
       <ul className={s}>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} windItems`}>
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {wind.details[0]}
@@ -63,7 +63,7 @@ export default function WindSystems() {
           </div>
           <img className={s.images} src={images[0]} alt="" />
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} windItems`}>
           <img className={s.images} src={images[1]} alt="" />
           <div className={s}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -82,7 +82,7 @@ export default function WindSystems() {
             <Submit />
           </div>
         </li>
-        <li className={s.contentItems}>
+        <li className={`${s.contentItems} windItems`}>
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {wind.solutions[1]}
