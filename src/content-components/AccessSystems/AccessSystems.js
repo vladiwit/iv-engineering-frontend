@@ -17,7 +17,7 @@ export default function AccessSystems() {
     // console.log('ENRTIES IN CB::::::', entries);
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        console.log('INTERSECTING:', entry.target);
+        // console.log('INTERSECTING:', entry.target);
         entry.target.classList.add(`${s.active}`);
         // observer.unobserve(entry);
       }
