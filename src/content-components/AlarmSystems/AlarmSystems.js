@@ -5,45 +5,22 @@ import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import LangContentSelector from '../../additional-components/LanguageContentSelector';
 import Submit from 'tools/Submit';
 import images from 'utils/db/images-db/alarm';
-
+import io from 'tools/io';
 export default function AlarmSystems() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { alarm } = LangContentSelector(currentLanguage);
-
   // -------------------------IO---------------------------
-  const cb = entries => {
-    // console.log('ENRTIES IN CB::::::', entries);
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(`${s.active}`);
-        // observer.unobserve(entry);
-      }
-    });
-  };
-
-  const options = {
-    // rootMargin: '-200px',
-    // threshold: 0.3,
-  };
-
-  const observer = new IntersectionObserver(cb, options);
-
   useEffect(() => {
-    const targets = document.querySelectorAll('.alarmItems');
-    // console.log('TARGET_ARRAY:::::', targets);
-
-    targets.forEach(target => observer.observe(target));
+    io();
   }, []);
-
-  // ---------------------------------------------------------------
-
+  // ------------------------------------------------------
   return (
     <section className={s.alarm}>
       <h2 className={s.heads}>{alarm.head}</h2>
       <p className={s.pain}>{alarm.pain}</p>
       <b className={s.subhead}>{alarm.subhead[0]}</b>
       <ul>
-        <li className={`${s.contentItems} alarmItems`}>
+        <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {alarm.content[0]}
@@ -53,7 +30,7 @@ export default function AlarmSystems() {
           </div>
           <img className={s.images} src={images[0]} alt="" />
         </li>
-        <li className={`${s.contentItems} alarmItems`}>
+        <li className={s.contentItems} id="contentItems">
           <img className={s.images} src={images[1]} alt="" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -63,7 +40,7 @@ export default function AlarmSystems() {
             <Submit />
           </div>
         </li>
-        <li className={`${s.contentItems} alarmItems`}>
+        <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {alarm.content[2]}
@@ -94,3 +71,30 @@ export default function AlarmSystems() {
     </section>
   );
 }
+
+// -------------------------IO---------------------------
+// const cb = entries => {
+//   // console.log('ENRTIES IN CB::::::', entries);
+//   entries.forEach((entry, i) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add(`${s.active}`);
+//       // observer.unobserve(entry);
+//     }
+//   });
+// };
+
+// const options = {
+//   // rootMargin: '-200px',
+//   // threshold: 0.3,
+// };
+
+// const observer = new IntersectionObserver(cb, options);
+
+// useEffect(() => {
+//   const targets = document.querySelectorAll('.alarmItems');
+//   // console.log('TARGET_ARRAY:::::', targets);
+
+//   targets.forEach(target => observer.observe(target));
+// }, []);
+
+// ---------------------------------------------------------------

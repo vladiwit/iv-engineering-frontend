@@ -5,38 +5,16 @@ import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import LangContentSelector from '../../additional-components/LanguageContentSelector';
 import Submit from 'tools/Submit';
 import images from 'utils/db/images-db/wind-images';
+import io from 'tools/io';
 
 export default function WindSystems() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { wind } = LangContentSelector(currentLanguage);
-
   // -------------------------IO---------------------------
-  const cb = entries => {
-    // console.log('ENRTIES IN CB::::::', entries);
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(`${s.active}`);
-        // observer.unobserve(entry);
-      }
-    });
-  };
-
-  const options = {
-    // rootMargin: '-200px',
-    // threshold: 0.3,
-  };
-
-  const observer = new IntersectionObserver(cb, options);
-
   useEffect(() => {
-    const targets = document.querySelectorAll('.windItems');
-    // console.log('TARGET_ARRAY:::::', targets);
-
-    targets.forEach(target => observer.observe(target));
+    io();
   }, []);
-
-  // ---------------------------------------------------------------
-
+  // ------------------------------------------------------
   return (
     <section className={s.wind}>
       <h2 className={s.heads}>{wind.head}</h2>
@@ -47,7 +25,7 @@ export default function WindSystems() {
       </article>
 
       <ul className={s}>
-        <li className={`${s.contentItems} windItems`}>
+        <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {wind.details[0]}
@@ -63,7 +41,7 @@ export default function WindSystems() {
           </div>
           <img className={s.images} src={images[0]} alt="" />
         </li>
-        <li className={`${s.contentItems} windItems`}>
+        <li className={s.contentItems} id="contentItems">
           <img className={s.images} src={images[1]} alt="" />
           <div className={s}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -82,7 +60,7 @@ export default function WindSystems() {
             <Submit />
           </div>
         </li>
-        <li className={`${s.contentItems} windItems`}>
+        <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {wind.solutions[1]}
@@ -103,3 +81,30 @@ export default function WindSystems() {
     </section>
   );
 }
+
+// -------------------------IO---------------------------
+// const cb = entries => {
+//   // console.log('ENRTIES IN CB::::::', entries);
+//   entries.forEach((entry, i) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add(`${s.active}`);
+//       // observer.unobserve(entry);
+//     }
+//   });
+// };
+
+// const options = {
+//   // rootMargin: '-200px',
+//   // threshold: 0.3,
+// };
+
+// const observer = new IntersectionObserver(cb, options);
+
+// useEffect(() => {
+//   const targets = document.querySelectorAll('.windItems');
+//   // console.log('TARGET_ARRAY:::::', targets);
+
+//   targets.forEach(target => observer.observe(target));
+// }, []);
+
+// ---------------------------------------------------------------

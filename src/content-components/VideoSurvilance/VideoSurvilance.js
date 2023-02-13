@@ -5,39 +5,16 @@ import { useSelector } from 'react-redux';
 import images from '../../utils/db/images-db/cctv';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import Submit from '../../tools/Submit';
+import io from 'tools/io';
 
 export default function VideoSurvilance() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { videosurvilance } = LangContentSelector(currentLanguage);
-
   // -------------------------IO---------------------------
-  const cb = entries => {
-    // console.log('ENRTIES IN CB::::::', entries);
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(`${s.active}`);
-        // observer.unobserve(entry);
-      }
-    });
-  };
-
-  const options = {
-    // rootMargin: '-200px',
-    // threshold: 0.3,
-  };
-
-  const observer = new IntersectionObserver(cb, options);
-
   useEffect(() => {
-    const targets = document.querySelectorAll('.videoItems');
-    // const targets = document.querySelectorAll(`.${s.contentItems}`);
-    // console.log('TARGET_ARRAY:::::', targets);
-
-    targets.forEach(target => observer.observe(target));
+    io();
   }, []);
-
-  // ---------------------------------------------------------------
-
+  // ------------------------------------------------------
   return (
     <section className={s.cctv}>
       <h2 className={s.heads}>{videosurvilance.head}</h2>
@@ -45,7 +22,7 @@ export default function VideoSurvilance() {
       <b className={s.subhead}>{videosurvilance.subhead[0]}</b>
 
       <ul className={s}>
-        <li className={`${s.contentItems} videoItems`}>
+        <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             {/* <p className={s.text}>{videosurvilance.solutions[0]}</p> */}
             <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -57,7 +34,7 @@ export default function VideoSurvilance() {
           <img className={s.images} src={images[0]} alt="vendors" />
         </li>
 
-        <li className={`${s.contentItems} videoItems`}>
+        <li className={s.contentItems} id="contentItems">
           <img className={s.images} src={images[1]} alt="vendors" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -100,3 +77,31 @@ export default function VideoSurvilance() {
     </section>
   );
 }
+
+// -------------------------IO---------------------------
+// const cb = entries => {
+//   // console.log('ENRTIES IN CB::::::', entries);
+//   entries.forEach((entry, i) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add(`${s.active}`);
+//       // observer.unobserve(entry);
+//     }
+//   });
+// };
+
+// const options = {
+//   // rootMargin: '-200px',
+//   // threshold: 0.3,
+// };
+
+// const observer = new IntersectionObserver(cb, options);
+
+// useEffect(() => {
+//   const targets = document.querySelectorAll('.videoItems');
+//   // const targets = document.querySelectorAll(`.${s.contentItems}`);
+//   // console.log('TARGET_ARRAY:::::', targets);
+
+//   targets.forEach(target => observer.observe(target));
+// }, []);
+
+// ---------------------------------------------------------------

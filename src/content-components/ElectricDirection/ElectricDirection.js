@@ -5,38 +5,16 @@ import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import LangContentSelector from '../../additional-components/LanguageContentSelector';
 import Submit from 'tools/Submit';
 import images from 'utils/db/images-db/alarm';
+import io from 'tools/io';
 
 export default function AlarmSystems() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { alarm } = LangContentSelector(currentLanguage);
-
   // -------------------------IO---------------------------
-  const cb = entries => {
-    // console.log('ENRTIES IN CB::::::', entries);
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(`${s.active}`);
-        // observer.unobserve(entry);
-      }
-    });
-  };
-
-  const options = {
-    // rootMargin: '-200px',
-    // threshold: 0.3,
-  };
-
-  const observer = new IntersectionObserver(cb, options);
-
   useEffect(() => {
-    const targets = document.querySelectorAll('.elItems');
-    // console.log('TARGET_ARRAY:::::', targets);
-
-    targets.forEach(target => observer.observe(target));
+    io();
   }, []);
-
-  // ---------------------------------------------------------------
-
+  // ------------------------------------------------------
   return (
     <section className={s.alarm}>
       <h2 className={s.heads}>{alarm.head}</h2>
@@ -94,3 +72,30 @@ export default function AlarmSystems() {
     </section>
   );
 }
+
+// -------------------------IO---------------------------
+// const cb = entries => {
+//   // console.log('ENRTIES IN CB::::::', entries);
+//   entries.forEach((entry, i) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add(`${s.active}`);
+//       // observer.unobserve(entry);
+//     }
+//   });
+// };
+
+// const options = {
+//   // rootMargin: '-200px',
+//   // threshold: 0.3,
+// };
+
+// const observer = new IntersectionObserver(cb, options);
+
+// useEffect(() => {
+//   const targets = document.querySelectorAll('.elItems');
+//   // console.log('TARGET_ARRAY:::::', targets);
+
+//   targets.forEach(target => observer.observe(target));
+// }, []);
+
+// ---------------------------------------------------------------

@@ -6,38 +6,18 @@ import LangContentSelector from '../../additional-components/LanguageContentSele
 import { useSelector } from 'react-redux';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import Submit from 'tools/Submit';
+import io from 'tools/io';
 
-export default function LANContent() {
+export default function SolarEnergy() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { solarEnergy } = LangContentSelector(currentLanguage);
-  const { slide2, slide4, slide5, slide6 } = images;
+  const { slide1, slide2, slide3, slide4, slide5, slide6 } = images;
 
   // -------------------------IO---------------------------
-  const cb = entries => {
-    // console.log('ENRTIES IN CB::::::', entries);
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(`${s.active}`);
-        // observer.unobserve(entry);
-      }
-    });
-  };
-
-  const options = {
-    // rootMargin: '-200px',
-    // threshold: 0.3,
-  };
-
-  const observer = new IntersectionObserver(cb, options);
-
   useEffect(() => {
-    const targets = document.querySelectorAll('.solarItems');
-    // console.log('TARGET_ARRAY:::::', targets);
-
-    targets.forEach(target => observer.observe(target));
+    io();
   }, []);
-
-  // ---------------------------------------------------------------
+  // ------------------------------------------------------
 
   return (
     <>
@@ -47,7 +27,7 @@ export default function LANContent() {
         <b className={s.subhead}>{solarEnergy.subhead[0]}</b>
 
         <ul className={s}>
-          {/* <li className={s.contentItems}>
+          {/* <li className={s.contentItems} id="contentItems">
             <div className={s.itemText}>
               <p className={`${s.subhead} ${s.subheadItems}`}>
                 {solarEnergy.solutions[0]}
@@ -65,7 +45,7 @@ export default function LANContent() {
             <img src={slide1} className={s.images} alt="content" />
           </li> */}
 
-          <li className={`${s.contentItems} solarItems`}>
+          <li className={s.contentItems} id="contentItems">
             <img src={slide2} className={s.images} alt="system integration" />
             <div className={s.itemText}>
               <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -83,7 +63,7 @@ export default function LANContent() {
             </div>
           </li>
 
-          {/* <li className={s.contentItems}>
+          {/* <li className={s.contentItems} id="contentItems">
             <div className={s.itemText}>
               <p className={`${s.subhead} ${s.subheadItems}`}>
                 {solarEnergy.solutions[2]}
@@ -133,3 +113,30 @@ export default function LANContent() {
     </>
   );
 }
+
+// -------------------------IO---------------------------
+// const cb = entries => {
+//   // console.log('ENRTIES IN CB::::::', entries);
+//   entries.forEach((entry, i) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add(`${s.active}`);
+//       // observer.unobserve(entry);
+//     }
+//   });
+// };
+
+// const options = {
+//   // rootMargin: '-200px',
+//   // threshold: 0.3,
+// };
+
+// const observer = new IntersectionObserver(cb, options);
+
+// useEffect(() => {
+//   const targets = document.querySelectorAll('.solarItems');
+//   // console.log('TARGET_ARRAY:::::', targets);
+
+//   targets.forEach(target => observer.observe(target));
+// }, []);
+
+// ---------------------------------------------------------------

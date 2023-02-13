@@ -6,44 +6,24 @@ import Submit from 'tools/Submit';
 import images from 'utils/db/images-db/fire-images';
 import getID from 'tools/getID';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
+import io from 'tools/io';
 
 export default function FireSystems() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { fire } = LangContentSelector(currentLanguage);
 
   // -------------------------IO---------------------------
-  const cb = entries => {
-    // console.log('ENRTIES IN CB::::::', entries);
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(`${s.active}`);
-        // observer.unobserve(entry);
-      }
-    });
-  };
-
-  const options = {
-    // rootMargin: '-200px',
-    // threshold: 0.3,
-  };
-
-  const observer = new IntersectionObserver(cb, options);
-
   useEffect(() => {
-    const targets = document.querySelectorAll('.fireItems');
-    // console.log('TARGET_ARRAY:::::', targets);
-
-    targets.forEach(target => observer.observe(target));
+    io();
   }, []);
-
-  // ---------------------------------------------------------------
+  // ------------------------------------------------------
 
   return (
     <section className={s.fire}>
       <h2 className={s.heads}>{fire.head}</h2>
       <p className={s.pain}>{fire.pain}</p>
       <ul>
-        <li className={`${s.contentItems} fireItems`}>
+        <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {fire.solutions[0]}
@@ -60,7 +40,7 @@ export default function FireSystems() {
           </div>
           <img className={s.images} src={images[0]} alt="" />
         </li>
-        <li className={`${s.contentItems} fireItems`}>
+        <li className={s.contentItems} id="contentItems">
           {/* <img className={s.fireImages} src={images[1]} alt='' /> */}
           <img className={s.images} src={images[2]} alt="" />
           <div className={s.itemText}>
@@ -73,7 +53,7 @@ export default function FireSystems() {
             <Submit />
           </div>
         </li>
-        <li className={`${s.contentItems} fireItems`}>
+        <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {fire.solutions[2]}
@@ -99,3 +79,30 @@ export default function FireSystems() {
     </section>
   );
 }
+
+// -------------------------IO---------------------------
+// const cb = entries => {
+//   // console.log('ENRTIES IN CB::::::', entries);
+//   entries.forEach((entry, i) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add(`${s.active}`);
+//       // observer.unobserve(entry);
+//     }
+//   });
+// };
+
+// const options = {
+//   // rootMargin: '-200px',
+//   // threshold: 0.3,
+// };
+
+// const observer = new IntersectionObserver(cb, options);
+
+// useEffect(() => {
+//   const targets = document.querySelectorAll('.fireItems');
+//   // console.log('TARGET_ARRAY:::::', targets);
+
+//   targets.forEach(target => observer.observe(target));
+// }, []);
+
+// ---------------------------------------------------------------
