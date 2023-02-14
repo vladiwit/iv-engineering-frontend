@@ -4,11 +4,8 @@
   height: auto;
   margin:  auto;
   padding-left: 10px;
-  transform: scale(1);
-  animation: animate100 1300ms  ;
-  &::before{
-    content:"scale(0)";
-  }
+  // transform: scale(1);
+  // animation: animate100 400ms ;
 }
 
 @keyframes animate100 {
