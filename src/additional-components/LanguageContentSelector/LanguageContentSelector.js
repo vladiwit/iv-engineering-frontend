@@ -4,6 +4,7 @@ import infornationSystemsRu from 'utils/db/ru/infornationSystems-ru.js';
 import securityRu from 'utils/db/ru/securitysystems-ru.json';
 import alternativeEnergyRu from 'utils/db/ru/alternativeEnergy-ru.js';
 import lanRu from 'utils/db/ru/lan-ru.json';
+
 import itsecurityRu from 'utils/db/ru/itsecurity-ru.json';
 import videosurvilanceRu from 'utils/db/ru/videosurvilance-ru.json';
 import alarmRu from 'utils/db/ru/alarm-ru.json';
@@ -27,6 +28,7 @@ import infornationSystemsEn from 'utils/db/en/infornationSystems-en.js';
 import securityEn from 'utils/db/en/securitysystems-en.json';
 import alternativeEnergyEn from 'utils/db/en/alternativeEnergy-en.js';
 import lanEn from 'utils/db/en/lan-en.json';
+import lanDirectionEn from 'utils/db/en/LAN-direction-en.js';
 import itsecurityEn from 'utils/db/en/itsecurity-en.json';
 import videosurvilanceEn from 'utils/db/en/videosurvilance-en.json';
 import alarmEn from 'utils/db/en/alarm-en.json';
@@ -50,6 +52,7 @@ import infornationSystemsUa from 'utils/db/ua/infornationSystems-ua.js';
 import securityUa from 'utils/db/ua/securitysystems-ua.json';
 import alternativeEnergyUa from 'utils/db/ua/alternativeEnergy-ua.js';
 import lanUa from 'utils/db/ua/lan-ua.json';
+import lanDirectionUA from 'utils/db/ua/LAN-direction-ua.js';
 import itsecurityUa from 'utils/db/ua/itsecurity-ua.json';
 import videosurvilanceUa from 'utils/db/ua/videosurvilance-ua.json';
 import alarmUa from 'utils/db/ua/alarm-ua.json';
@@ -75,6 +78,7 @@ const LangContentSelector = currentLanguage => {
     securitysystems: securityRu,
     alternativeEnergy: alternativeEnergyRu,
     lan: lanRu,
+    lanDirections: lanDirectionUA,
     itsecurity: itsecurityRu,
     videosurvilance: videosurvilanceRu,
     alarm: alarmRu,
@@ -99,6 +103,7 @@ const LangContentSelector = currentLanguage => {
     securitysystems: securityEn,
     alternativeEnergy: alternativeEnergyEn,
     lan: lanEn,
+    lanDirections: lanDirectionEn,
     itsecurity: itsecurityEn,
     videosurvilance: videosurvilanceEn,
     alarm: alarmEn,
@@ -123,6 +128,7 @@ const LangContentSelector = currentLanguage => {
     securitysystems: securityUa,
     alternativeEnergy: alternativeEnergyUa,
     lan: lanUa,
+    lanDirections: lanDirectionUA,
     itsecurity: itsecurityUa,
     videosurvilance: videosurvilanceUa,
     alarm: alarmUa,

@@ -9,7 +9,7 @@ import io from 'tools/io';
 
 export default function LANContent() {
   const currentLanguage = useSelector(getLanguageMemoised);
-  const { lan } = LangContentSelector(currentLanguage);
+  const { lan, lanDirections } = LangContentSelector(currentLanguage);
 
   // -------------------------IO---------------------------
   useEffect(() => {
@@ -30,9 +30,50 @@ export default function LANContent() {
               <p className={`${s.subhead} ${s.subheadItems}`}>
                 {lan.solutions[0]}
               </p>
+
+              <ul className={s.contentLanList}>
+                <li>
+                  <p className={`${s.subhead}`}>
+                    {lanDirections.contentLAN[0]}
+                  </p>
+                  <ul className={s.lanList}>
+                    {lanDirections.detailsDATA.map((detail, i) => (
+                      <li key={i} className={s.text}>
+                        <p className={s.textItem}>{detail}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+                <li>
+                  <p className={`${s.subhead}`}>
+                    {lanDirections.contentLAN[1]}
+                  </p>
+                  <ul className={s.lanList}>
+                    {lanDirections.detailsSCS.map((detail, i) => (
+                      <li key={i} className={s.text}>
+                        <p className={s.textItem}>{detail}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+
+                <li>
+                  <p className={`${s.subhead}`}>
+                    {lanDirections.contentLAN[2]}
+                  </p>
+                  <ul className={s.lanList}>
+                    {lanDirections.detailsDATA.map((detail, i) => (
+                      <li key={i} className={s.text}>
+                        <p className={s.textItem}>{detail}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              </ul>
+
               <Submit />
             </div>
-            <img src={images[0]} className={s.images} alt="content" />
+            {/* <img src={images[0]} className={s.images} alt="content" /> */}
           </li>
 
           <li className={s.contentItems} id="contentItems">
