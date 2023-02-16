@@ -20,6 +20,9 @@
 }
 
 
+
+
+
 .text {
   width: 95%;
   margin: auto;
@@ -29,6 +32,12 @@
   line-height: 1.3rem;
   letter-spacing: 1.1;
   color: $text-primary-color;
+}
+
+.textItem {
+  padding: 5px 0 0;
+  line-height: 1rem;
+
 }
 
 .link{
@@ -54,12 +63,20 @@
   .itemText{
     margin-top: 20px;
   }
+
   .text{
     width: 80%;
     font-size: 16px;
     color: $text-primary-color;
     border-left: $accent-secondary-color 1px solid;
     }
+
+    .textItem {
+      padding: 5px ;
+  line-height: 1.3rem;
+
+    }
+    
 }
 
 @media screen and (min-width: $desktop) {

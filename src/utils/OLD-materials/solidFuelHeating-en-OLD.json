@@ -11,16 +11,20 @@
   "content1": [
     "various types of solid fuels - peat, coal, coal waste, pellets, briquettes, firewood, wood materials, municipal solid waste, garbage, etc. with high humidity and ash content",
     "allows you to work up to 3 days on one load of fuel (this characteristic may change in the range of 12-76 hours, depending on the type of fuel and thermal properties of the building)",
-
-    "precise adjustment of the temperature and power allows you to save up to 50% of fuel compared to using simple boilers with conventional combustion",
-
-    "can be included in the general heating system of the building",
-    "automatically controlled"
+    "calculated efficiency of the boiler is 85% (depending on the type of fuel, it may vary in the range of 82-89%).",
+    "precise adjustment of the temperature and power of the boiler (increase and decrease) in manual mode and automatically using a room temperature controller, or a weather controller. Allows you to save up to 50% of fuel compared to using simple boilers with conventional combustion",
+    "The set temperature of the coolant is automatically maintained: from 35 to 90 °C (20-50% of the operating time, the fuel in the boiler is in a state of smoldering) as a result of a longer period of operation at one load and the absence of fuel overburning)",
+    "if necessary, they can be equipped with additional systems, they can be included in the general heating system of the building",
+    "automatically controlled",
+    "do not require constant care, easy to maintain and operate (does not require qualified personnel)"
   ],
   "text2": "Due to the special combustion method, the equipment has the following advantages:",
   "content2": [
     "Energy-saving technologies, cheap heat in compliance with environmental standards, significant fuel savings compared to similar heat generators",
     "Fuel does not require preparation (i.e. fuel - unsorted!)",
+    "Humidity of fuel can reach 75%",
+    "When burning wood of resinous species, soot and soot do not settle on the pipes of the heat exchanger",
+    "It is possible to clean the heat exchanger while the furnace is running",
     "Incredible environmental performance - emissions close to the \"ideal fuel\" - natural gas (composition of CO in the exhaust gases is less than 1 g/m3 at an allowable rate for burning natural gas of 0.6 g/m3) - heat generators can be installed in urban areas"
   ],
   "text3": "Wood chips and pellets, which are organic waste, have the following advantages:",

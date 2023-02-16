@@ -21,7 +21,6 @@ const io = () => {
   };
   const observer = new IntersectionObserver(mainCallback, options);
   const targets = document.querySelectorAll(`#contentItems `);
-  // const targets = document.querySelectorAll(`.contentItems`);
   // console.log('TARGET_ARRAY:::::', targets);
 
   targets.forEach(target => observer.observe(target));

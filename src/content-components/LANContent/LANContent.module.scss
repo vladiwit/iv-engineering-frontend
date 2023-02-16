@@ -16,16 +16,10 @@
   color: $text-primary-color;
 }
 
-
 .lanList {
   text-align: start;
   list-style: circle;
 }
-
-.textItem {
-  padding: 5px;
-}
-
 
 .contentLanList{
  display: block;
@@ -40,15 +34,12 @@
 
 }
 
-
-
 @media screen and (min-width: $mobile) {
 
 
 }
 
 @media screen and (min-width: $tablet) {
-
   .contentLanList{
     display: flex;
     justify-content: space-between;
@@ -57,5 +48,4 @@
 
 @media screen and (min-width: $desktop) {
 
-  
 }
