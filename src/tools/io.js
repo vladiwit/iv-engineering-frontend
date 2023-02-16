@@ -16,8 +16,8 @@ const io = () => {
   };
 
   const options = {
-    rootMargin: '-100px',
-    threshold: 0.5,
+    rootMargin: '-10%',
+    threshold: 0.4,
   };
   const observer = new IntersectionObserver(mainCallback, options);
   const targets = document.querySelectorAll(`#contentItems `);
