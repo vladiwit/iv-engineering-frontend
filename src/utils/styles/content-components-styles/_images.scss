@@ -42,7 +42,7 @@
   .images {
     max-width: 40%;
     // height: auto;
-    min-height: 350px;
+    // min-height: 350px;
   border-left: $accent-secondary-color 1px solid;
 
   }
@@ -58,7 +58,7 @@
 @media screen and (min-width: $desktop) {
   .images {
     // height: auto;
-   min-height: 500px;
+  //  min-height: 500px;
     margin: 25px auto;
   }
 
