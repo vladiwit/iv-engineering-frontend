@@ -9,7 +9,7 @@
 }
 
 @media screen and (min-width: $mobile) {
-  .videoItems,
+  // .videoItems,
   .contentItems {
     display: block;
   margin-top: 10px;
@@ -17,7 +17,7 @@
 }
 
 @media screen and (min-width: $tablet) {
-  .videoItems,
+  // .videoItems,
   .contentItems {
     display: flex;
     justify-content: space-between;
@@ -27,10 +27,11 @@
   }
 }
 @media screen and (min-width: $desktop) {
-  .videoItems,
+  // .videoItems,
   .contentItems {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   margin-top: 15px;
   }

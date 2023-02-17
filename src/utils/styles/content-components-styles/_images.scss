@@ -1,7 +1,7 @@
 .images {
   display: block;
   width: 90%;
-  height: 100%;
+  height: auto;
   margin:  auto;
   padding-left: 10px;
   // transform: scale(1);
@@ -40,8 +40,9 @@
 
 @media screen and (min-width: $tablet) {
   .images {
-    width: 40%;
-    height: auto;
+    max-width: 40%;
+    // height: auto;
+    min-height: 350px;
   border-left: $accent-secondary-color 1px solid;
 
   }
@@ -56,8 +57,8 @@
 
 @media screen and (min-width: $desktop) {
   .images {
-    width: 40%;
-    height: auto;
+    // height: auto;
+   min-height: 500px;
     margin: 25px auto;
   }
 

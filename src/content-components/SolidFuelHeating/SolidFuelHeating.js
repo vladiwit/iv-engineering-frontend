@@ -23,8 +23,8 @@ export default function SolidFuelHeating() {
     <>
       <section className={s.solidFuel}>
         <h2 className={s.heads}>{solidFuel.head}</h2>
-        <p className={s.pain}>{solidFuel.pain}</p>
-        <b className={s.subhead}>{solidFuel.subhead[0]}</b>
+        <p className={s.pain}>{solidFuel.intro}</p>
+        {/* <b className={s.subhead}>{solidFuel.subhead[0]}</b> */}
 
         <ul className={s}>
           <li className={s.contentItems} id="contentItems">
