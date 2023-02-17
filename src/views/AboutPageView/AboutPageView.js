@@ -31,22 +31,37 @@ function AboutPageView() {
             unmountOnExit
           >
             <div>
-              <h2 className={s.heads}>{about.head}</h2>
-              <p className={`${s.subheadItems} ${s.aboutContent}`}>
-                {about.part1}
-              </p>
-              <ul
-                className={`${s.subheadItems} ${s.aboutContent} ${s.aboutDirectionList}`}
-              >
-                {about.directionList.map(item => (
-                  <li key={getID()} className={s.aboutDirectionListItem}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className={`${s.subheadItems} ${s.aboutContent}`}>
-                {about.part2}
-              </p>
+              <div>
+                <h2 className={s.heads}>{about.head}</h2>
+                <p className={`${s.subheadItems} ${s.aboutContent}`}>
+                  {about.part1}
+                </p>
+                <ul
+                  className={`${s.subheadItems} ${s.aboutContent} ${s.aboutDirectionList}`}
+                >
+                  {about.directionList.map(item => (
+                    <li key={getID()} className={s.aboutDirectionListItem}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className={`${s.subheadItems} ${s.aboutContent}`}>
+                  {about.part2}
+                </p>
+              </div>
+
+              <div>
+                <h2 className={s.heads}>{about.consulingTitle}</h2>
+                <p className={`${s.subheadItems} ${s.aboutContent}`}>
+                  {about.consulting1}
+                </p>
+                <p className={`${s.subheadItems} ${s.aboutContent}`}>
+                  {about.consulting2}
+                </p>
+                <p className={`${s.subheadItems} ${s.aboutContent}`}>
+                  {about.consulting3}
+                </p>
+              </div>
             </div>
           </CSSTransition>
         </div>
