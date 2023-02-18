@@ -66,9 +66,12 @@
 
   .text{
     width: 80%;
+    margin-bottom: 10px;
     font-size: 16px;
+  line-height: 1.5rem;
     color: $text-primary-color;
     border-left: $accent-secondary-color 1px solid;
+
     }
 
     .textItem {
@@ -85,6 +88,6 @@
   }
     .text{
       width: 70%;
-    font-size: 20px;
+    font-size: 18px;
     }
 }

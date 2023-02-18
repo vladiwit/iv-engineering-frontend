@@ -6,6 +6,7 @@ import LangContentSelector from '../../additional-components/LanguageContentSele
 import Submit from 'tools/Submit';
 import images from 'utils/db/images-db/alarm';
 import io from 'tools/io';
+import arrayMaping from 'tools/arrayMaping';
 export default function AlarmSystems() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { alarm } = LangContentSelector(currentLanguage);
@@ -26,6 +27,7 @@ export default function AlarmSystems() {
               {alarm.content[0]}
             </p>
             <p className={`${s.subheadItems}`}>{alarm.details[0]}</p>
+            {arrayMaping(alarm.text, s.itemsList, s.text, s.textItem)}
             <Submit />
           </div>
           <img className={s.images} src={images[0]} alt="" />
