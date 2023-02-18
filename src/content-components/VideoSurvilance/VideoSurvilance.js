@@ -6,7 +6,7 @@ import images from '../../utils/db/images-db/cctv';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import Submit from '../../tools/Submit';
 import io from 'tools/io';
-
+import arrayMaping from 'tools/arrayMaping';
 export default function VideoSurvilance() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { videosurvilance } = LangContentSelector(currentLanguage);
@@ -18,7 +18,7 @@ export default function VideoSurvilance() {
   return (
     <section className={s.cctv}>
       <h2 className={s.heads}>{videosurvilance.head}</h2>
-      <p className={s.pain}>{videosurvilance.pain}</p>
+      <pre className={s.pain}>{videosurvilance.pain}</pre>
       <b className={s.subhead}>{videosurvilance.subhead[0]}</b>
 
       <ul className={s}>
@@ -28,7 +28,13 @@ export default function VideoSurvilance() {
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {videosurvilance.solutions[0]}
             </p>
-            <p className={`${s.subheadItems}`}>{videosurvilance.content[0]}</p>
+            {arrayMaping(
+              videosurvilance.content[0],
+              s.itemsList,
+              s.text,
+              s.textItem,
+            )}
+            {/* <p className={`${s.subheadItems}`}>{videosurvilance.content[0]}</p> */}
             <Submit />
           </div>
           <img className={s.images} src={images[0]} alt="vendors" />
@@ -40,7 +46,13 @@ export default function VideoSurvilance() {
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {videosurvilance.solutions[1]}
             </p>
-            <p className={`${s.subheadItems}`}>{videosurvilance.content[1]}</p>
+            {arrayMaping(
+              videosurvilance.content[1],
+              s.itemsList,
+              s.text,
+              s.textItem,
+            )}
+            {/* <p className={`${s.subheadItems}`}>{videosurvilance.content[1]}</p> */}
             <Submit />
           </div>
         </li>

@@ -31,8 +31,8 @@ export default function WindSystems() {
               {wind.details[0]}
             </p>
             <ul className={s.windList}>
-              {wind.texts1.map(text => (
-                <li key={Math.random()} className={s.text}>
+              {wind.texts1.map((text, i) => (
+                <li key={i} className={s.text}>
                   <p className={s.textItem}>{text}</p>{' '}
                 </li>
               ))}
@@ -50,8 +50,8 @@ export default function WindSystems() {
             <div className={s.itemText}>
               <i className={`${s.text} ${s.textItem}`}>{wind.details[1]}</i>
               <ul className={s.windList}>
-                {wind.texts2.map(text => (
-                  <li key={Math.random()} className={s.text}>
+                {wind.texts2.map((text, i) => (
+                  <li key={i} className={s.text}>
                     <p className={s.textItem}>{text}</p>
                   </li>
                 ))}
@@ -67,8 +67,8 @@ export default function WindSystems() {
             </p>
 
             <ul className={s.windList}>
-              {wind.texts3.map(text => (
-                <li key={Math.random()} className={s.text}>
+              {wind.texts3.map((text, i) => (
+                <li key={i} className={s.text}>
                   <p className={s.textItem}>{text}</p>
                 </li>
               ))}
