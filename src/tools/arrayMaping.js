@@ -6,8 +6,8 @@ export default function arrayMaping(
   classNameItems,
   textItem,
 ) {
-  console.log(array);
-  console.log('CLASSNAME:::::::');
+  // console.log(array);
+  // console.log('CLASSNAME:::::::');
 
   return (
     <ul className={classNameList}>

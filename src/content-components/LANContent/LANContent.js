@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import Submit from 'tools/Submit';
 import io from 'tools/io';
-
+import arrayMaping from 'tools/arrayMaping';
 export default function LANContent() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { lan, lanDirections } = LangContentSelector(currentLanguage);
@@ -86,6 +86,9 @@ export default function LANContent() {
               <p className={`${s.subhead} ${s.subheadItems}`}>
                 {lan.solutions[1]}
               </p>
+
+              {arrayMaping(lan.text1, s.itemsList, s.text, s.textItem)}
+
               <Submit />
             </div>
           </li>
@@ -95,6 +98,7 @@ export default function LANContent() {
               <p className={`${s.subhead} ${s.subheadItems}`}>
                 {lan.solutions[2]}
               </p>
+              {arrayMaping(lan.text2, s.itemsList, s.text, s.textItem)}
               <Submit />
             </div>
             <img src={images[2]} className={s.images} alt="clouds" />

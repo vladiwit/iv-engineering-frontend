@@ -4,12 +4,24 @@
   "subhead": ["Solutions for next directions", "In border"],
   "solutions": [
     "Architecture of networks  (SCS , LAN , Server-rooms , Data Centers) - Creating new and и improvement existing netwirks, creating unified environment at the physical level",
-    "Integration of voice, data, video, security systems, access control, video surveillance and other systems into overall structure",
-    "  System virtualization, organization of remote jobs, integration with cloud resources",
-
-    "solution for data-centres with high-capacity elements",
+    "The unified space for data transmission from various systems and networks, integration into a single structure:",
     "Itegration with cloud technologies",
-    "World tred solution"
+
+    "solution for data-centres with high-capacity elements"
+  ],
+  "text1": [
+    "- voice transmissions",
+    "- data",
+    "- video",
+    "- security systems",
+    "- access control",
+    "- video surveillance",
+    "and other IP-based systems"
+  ],
+  "text2": [
+    "System virtualization",
+    "Organization of remote work processes",
+    "Integration of distributed systems into a single structure"
   ],
   "works": [
     "Project documentation",
