@@ -25,6 +25,9 @@ export default function ThunderStormSystem() {
       <ul className={s}>
         <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
+            <h3 className={`${s.subhead} ${s.subheadItems}`}>
+              {thunder.itemTitle[0]}
+            </h3>
             <ul className={s.thunderList}>
               {thunder.solutions.map(item => (
                 <li key={getID()} className={s.text}>
@@ -47,6 +50,9 @@ export default function ThunderStormSystem() {
             alt="active thunder receiver"
           />
           <div className={s.itemText}>
+            <h3 className={`${s.subhead} ${s.subheadItems}`}>
+              {thunder.itemTitle[1]}
+            </h3>
             <p className={s.text}>{thunder.new}</p>
             <Submit />
           </div>
