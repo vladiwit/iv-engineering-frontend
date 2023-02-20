@@ -37,6 +37,11 @@
   width: 12px;
   height: 12px;
   fill:$accent-secondary-color;
+  &:hover{
+    transform: scale(1.1);
+    fill: $accent-primary-color;
+    cursor: pointer;
+  }
 }
 
 @media screen and (min-width: $mobile) {

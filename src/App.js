@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import SuccessSubmitPage from 'views/SuccessSubmitPage';
 import ErrorSubmitPage from 'views/ErrorSubmitPage';
 import LoaderModule from 'tools/LoaderModule';
+
 const App = () => {
   const {
     HomePageView,

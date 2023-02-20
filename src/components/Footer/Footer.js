@@ -5,7 +5,7 @@ import Communities from '../../content-components/Communities';
 
 export default function Footer() {
   return (
-    <footer className={s.footer}>
+    <footer className={s.footer} id="container">
       <Contacts />
       <Communities />
     </footer>
