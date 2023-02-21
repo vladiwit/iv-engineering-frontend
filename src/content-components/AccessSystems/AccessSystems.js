@@ -64,7 +64,8 @@ export default function AccessSystems() {
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {access.itemTitles[3]}
             </p>
-            {/* <p className={s.text}>{access.details[1]}</p> */}
+            <p className={`${s.subheadItems}`}>{access.itemD}</p>
+            {arrayMaping(access.itemDArray, s.itemsList, s.text, s.textItem)}
             <Submit />
           </div>
         </li>
