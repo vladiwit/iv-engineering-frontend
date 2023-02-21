@@ -1,6 +1,5 @@
-import React from 'react';
+import { useEffect } from 'react';
 import s from './AboutPageView.module.scss';
-import { CSSTransition } from 'react-transition-group';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import LanguageButton from '../../additional-components/LanguageButton/LanguageButton';
 import AppBar from '../../components/AppBar';
@@ -10,60 +9,63 @@ import Footer from 'components/Footer';
 import { useSelector } from 'react-redux';
 import getID from 'tools/getID';
 import CloseButton from 'tools/CloseButton';
+import io from 'tools/io';
+import arrayMaping from 'tools/arrayMaping';
 
 function AboutPageView() {
   const currentLanguage = useSelector(getLanguageMemoised);
-
   const { about } = LanguageContentSelector(currentLanguage);
+
+  useEffect(() => {
+    io('about', '0px', s.contentAnimation);
+  }, []);
+
   return (
     <>
       <LanguageButton />
       <AppBar />
       <CloseButton />
-      <section className={s}>
+      <section className={s} id="about">
         <div className={`${s.about} ${s.aboutContent}`}>
           {/* <div className={`${s.about}`}> */}
-          <CSSTransition
-            in={true}
-            appear={true}
-            timeout={500}
-            classNames={s}
-            unmountOnExit
-          >
+          <div>
             <div>
-              <div>
-                <h2 className={s.heads}>{about.head}</h2>
-                <p className={`${s.subheadItems} ${s.aboutContent}`}>
-                  {about.part1}
-                </p>
-                <ul
-                  className={`${s.subheadItems} ${s.aboutContent} ${s.aboutDirectionList}`}
-                >
-                  {about.directionList.map(item => (
-                    <li key={getID()} className={s.aboutDirectionListItem}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <p className={`${s.subheadItems} ${s.aboutContent}`}>
-                  {about.part2}
-                </p>
-              </div>
-
-              <div>
-                <h2 className={s.heads}>{about.consulingTitle}</h2>
-                <p className={`${s.subheadItems} ${s.aboutContent}`}>
-                  {about.consulting1}
-                </p>
-                <p className={`${s.subheadItems} ${s.aboutContent}`}>
-                  {about.consulting2}
-                </p>
-                <p className={`${s.subheadItems} ${s.aboutContent}`}>
-                  {about.consulting3}
-                </p>
-              </div>
+              <h2 className={s.heads}>{about.head}</h2>
+              <p className={`${s.subheadItems} ${s.aboutContent}`}>
+                {about.part1}
+              </p>
+              <ul
+                className={`${s.subheadItems} ${s.aboutContent} ${s.aboutDirectionList}`}
+              >
+                {about.directionList.map(item => (
+                  <li key={getID()} className={s.aboutDirectionListItem}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className={`${s.subheadItems} ${s.aboutContent}`}>
+                {about.part2}
+              </p>
             </div>
-          </CSSTransition>
+
+            <div>
+              <h3 className={`subhead ${s.subheadItems}`}>
+                {about.consulingTitle}
+              </h3>
+
+              {arrayMaping(about.consulting, s.itemsList, s.text, s.textItem)}
+
+              {/* <p className={`${s.subheadItems} ${s.aboutContent}`}>
+                {about.consulting1}
+              </p>
+              <p className={`${s.subheadItems} ${s.aboutContent}`}>
+                {about.consulting2}
+              </p>
+              <p className={`${s.subheadItems} ${s.aboutContent}`}>
+                {about.consulting3}
+              </p> */}
+            </div>
+          </div>
         </div>
       </section>
       <Submit />

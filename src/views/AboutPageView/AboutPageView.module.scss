@@ -1,8 +1,13 @@
 @import 'utils/styles/main';
 @import 'utils/styles/heads';
 @import 'utils/styles/items';
-@import 'utils/styles/animation.scss';
-// @import 'utils/styles/details-animation.module.scss';
+@import 'utils/styles/animation';
+@import 'utils/styles/pain';
+@import 'utils/styles/content-components-styles/images';
+@import 'utils/styles/content-components-styles/content';
+@import 'utils/styles/content-components-styles/works';
+@import 'utils/styles/content-components-styles/componentText';
+
 
 .about {
   box-sizing: border-box;
@@ -23,6 +28,7 @@ max-width: 95%;
 padding: 0;
 color: $accent-primary-color;
 line-height: 1.5;
+font-weight: 300;
 text-align: start;
 text-indent: 1%; // отступ первой строки абзаца
 
