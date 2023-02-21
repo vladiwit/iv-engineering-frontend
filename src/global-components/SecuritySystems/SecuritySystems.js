@@ -3,7 +3,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { getDetails } from 'redux/content/content-selectors';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
-import { CSSTransition } from 'react-transition-group';
 import securitySystemsImages from '../../utils/db/images-db/security-systems';
 import LangContentSelector from '../../additional-components/LanguageContentSelector';
 import Content from '../../additional-components/Content';
@@ -16,18 +15,10 @@ export default function SecuritySystems({ state }) {
   const { securitysystems } = LangContentSelector(currentLanguage);
 
   return (
-    <CSSTransition
-      in={true}
-      appear={true}
-      timeout={500}
-      classNames={s}
-      unmountOnExit
-    >
-      <div className={s.securitysystem}>
-        {!details && <Slider images={securitySystemsImages} />}
-        <Content content={securitysystems} state={state} />
-        <Submit />
-      </div>
-    </CSSTransition>
+    <div className={s.securitysystem}>
+      {!details && <Slider images={securitySystemsImages} />}
+      <Content content={securitysystems} state={state} />
+      <Submit />
+    </div>
   );
 }

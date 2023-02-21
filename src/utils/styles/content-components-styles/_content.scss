@@ -4,12 +4,10 @@
   padding-bottom: 10px;
   border-bottom: $accent-secondary-color 1px solid;
   margin: 15px auto;
-  // transform: scale(0);
   opacity: 0;
 }
 
 @media screen and (min-width: $mobile) {
-  // .videoItems,
   .contentItems {
     display: block;
   margin-top: 10px;
@@ -17,7 +15,6 @@
 }
 
 @media screen and (min-width: $tablet) {
-  // .videoItems,
   .contentItems {
     display: flex;
     justify-content: space-between;
@@ -28,10 +25,8 @@
   }
 }
 @media screen and (min-width: $desktop) {
-  // .videoItems,
   .contentItems {
     display: flex;
-    // justify-content: space-between;
     justify-content: space-around;
     align-items: center;
   margin-top: 15px;

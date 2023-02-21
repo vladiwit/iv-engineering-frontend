@@ -11,6 +11,8 @@ text-align: center;
 text-decoration: none;
 color: $text-secondary-color;
 margin: 5% 50px;
+opacity: 0;
+// outline: 1px solid red;
 &:hover{
   transform: scale(1.2);
   color: $accent-primary-color;
@@ -22,7 +24,7 @@ margin: 5% 50px;
 .contentItem{
   max-width: 300px;
   font-size: 14px;
-margin: 10%  50px;
+  margin: 10%  50px;
 
 
 }
@@ -31,7 +33,7 @@ margin: 10%  50px;
 .contentItem{
   max-width: 300px;
   font-size: 18px;
-margin: 20%  50px;
+  margin: 20%  50px;
 
 }
 }
@@ -39,6 +41,6 @@ margin: 20%  50px;
 .contentItem{
   max-width: 500px;
   font-size: 20px;
-margin: 10%  100px;
+  margin: 10%  100px;
 }
 }

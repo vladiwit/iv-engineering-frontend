@@ -1,13 +1,47 @@
-// @import 'styles/main.scss';
 
-.appear{
-  // transform: translateX(-100%);
-  opacity: 0;
+.contactsAnimation{
+  animation: animate100 1000ms $timing-function forwards;
 }
-.appearActive{
-  // transform: translateX(0);
-  opacity: 1;
-  // transition: all  3000ms $timing-function;
-  transition: all  1000ms linear;
+  
+.contentAnimation{
+  animation: animate200 1500ms $timing-function forwards;
+}
 
+.active{
+   animation: animate200 300ms $timing-function forwards;
 }
+
+  // --------------------------------------
+
+  @keyframes animate100 {
+    0% {
+      opacity: 0;
+  transform: translateX(-100%);
+    }
+  
+    30% {
+      opacity: 0;
+  transform: translateX(-100%);
+    }
+  
+    100% {
+      opacity: 1;
+  transform: translateX(0);
+    }
+  }
+
+  
+  @keyframes animate200 {
+    0% {
+      opacity: 0;
+    }
+  
+    30% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+

@@ -1,41 +1,4 @@
 @import 'utils/styles/main.scss';
-@import 'utils/styles/contacts-animation.module';
 @import 'utils/styles/footer.scss';
 
-// .contacts{
-//   display: flex;
-//   align-items: center;
-//   margin: auto; 
-//   color: $accent-secondary-color;
-//   opacity: 0;
-//   &:hover{
-//     color: $accent-primary-color;
-//     cursor: pointer;
-//     transform: scale(1.1);
-//   }
-// }
-
-// .contactsAnimation{
-//   opacity: 1;
-//   animation: animate100 1000ms $timing-function;
-//   }
-  
-  
-//   @keyframes animate100 {
-//     0% {
-//       opacity: 0;
-//   transform: translateX(-100%);
-//     }
-  
-//     30% {
-//       opacity: 0;
-//   transform: translateX(-100%);
-//     }
-  
-//     100% {
-//       opacity: 1;
-//   transform: translateX(0);
-//     }
-//   }
-  
 

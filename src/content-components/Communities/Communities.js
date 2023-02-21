@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import s from './Communities.module.scss';
 import sprite from 'utils/db/img/sprite.svg';
-import { CSSTransition } from 'react-transition-group';
 import { useSelector } from 'react-redux';
 import LanguageContentSelector from 'additional-components/LanguageContentSelector';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
@@ -19,7 +18,6 @@ export default function Communities() {
     <section className={s.footerItems}>
       {/* <p className={s.community}>{footer.sociality}</p> */}
       <p>{footer.sociality}</p>
-      {/* <CSSTransition in={true} appear classNames={s} timeout={2000}> */}
       <ul className={` list ${s.socialnetworks}`}>
         <li>
           <a
@@ -74,7 +72,6 @@ export default function Communities() {
           </a>
         </li>
       </ul>
-      {/* </CSSTransition> */}
     </section>
   );
 }

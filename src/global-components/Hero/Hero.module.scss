@@ -2,6 +2,7 @@
 @import 'utils/styles/hero-title.module';
 @import 'utils/styles/animation';
 
+
 .hero{
   position: relative;
   box-sizing: content-box;
@@ -20,21 +21,27 @@
   padding: 0;
 }
 
+.buttonContainer{
+  display: block;
+  text-align: center;
+  margin: auto;
+// width: auto;
+}
 
 .heroButton{
-  display: block;
-  margin: auto ;
+  display: inline-block;
   margin-bottom: 20px; 
   border:none;
   text-decoration: none;
   background-color: transparent;
+  opacity: 0;
+  // outline: 1px solid green;
   color: $text-secondary-color;
-
   &:hover,
   &:focus{
-    color:$accent-primary-color;
     cursor: pointer;
     transform: scale(1.2);
+    color:$accent-primary-color;
   transition: transform 250ms $timing-function;
   }
 }
