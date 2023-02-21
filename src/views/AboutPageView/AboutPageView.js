@@ -25,8 +25,8 @@ function AboutPageView() {
       <LanguageButton />
       <AppBar />
       <CloseButton />
-      <section className={s} id="about">
-        <div className={`${s.about} ${s.aboutContent}`}>
+      <section className={s}>
+        <div className={`${s.about} ${s.aboutContent}`} id="about">
           {/* <div className={`${s.about}`}> */}
           <div>
             <div>
