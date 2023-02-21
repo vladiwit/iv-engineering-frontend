@@ -10,7 +10,7 @@ export default function HomePageView() {
   return (
     <>
       <div className={s.homepage}>
-        <Slider images={heroImages} />;
+        <Slider images={heroImages} />
         <Lang />
         <Hero />
       </div>
