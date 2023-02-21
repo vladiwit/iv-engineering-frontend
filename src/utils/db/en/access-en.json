@@ -2,7 +2,7 @@
   "head": "access control and management systems",
   "subhead": ["Install", "Within", "Vendors we work with"],
   "pain": "The competence of our specialists covers access control systems from the simplest analog key fob systems and intercoms, to systems with multi-factor identification, which is part of security and time attendance systems, integrated with video surveillance systems  and face recognition systems",
-  "content": [
+  "itemTitles": [
     "analog access control systems, on key fobs, and cards",
     "analog and IP intercoms (multi-apartment, installation of outdoor panels as entry-exit control systems, access control in elevators, integration with mobile applications)",
     "terminal multi-factor autonomous systems, access control and working time accounting",
@@ -12,15 +12,21 @@
   ],
   "linkTitle": "ACS with identification by vein grid or similar systems",
 
-  "detailsA": [
+  "itemA": [
     "relevant for restricting access to offices and residential buildings (private and multi-apartment)",
     "as a measure to eliminate unauthorized access to warehouses, emergency exits of administrative buildings (hospitals, clinics, shops, educational institutions)",
     "passage control for enterprises with a small number of personnel"
   ],
-  "detailsB": [
+  "itemB": [
     "installation of call panels as entry-exit control systems",
     "access control in elevators",
     "integration with mobile applications"
+  ],
+  "itemC": "multi-factor terminal - a device that identifies a person in several ways (for example, cards and facial recognition), can be connected to an access control system as an access control device, and record the time when a particular person entered or left the enterprise. An ideal solution for small enterprises that need the function of control of passage and accounting of working hours",
+  "itemCArray": [
+    "- we select the equipment",
+    "- install",
+    "- configure the system"
   ],
   "details2": ["other biometric identification systems"],
 

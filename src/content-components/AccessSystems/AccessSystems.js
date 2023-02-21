@@ -8,7 +8,7 @@ import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import Submit from 'tools/Submit';
 import io from 'tools/io';
 import link from '../../utils/db/links/access-link.json';
-
+import arrayMaping from 'tools/arrayMaping';
 export default function AccessSystems() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { access } = LangContentSelector(currentLanguage);
@@ -27,15 +27,9 @@ export default function AccessSystems() {
         <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
-              {access.content[0]}
+              {access.itemTitles[0]}
             </p>
-            <ul className={s.accessList}>
-              {access.detailsA.map((detail, i) => (
-                <li key={i} className={s.text}>
-                  <p className={s.textItem}>{detail}</p>
-                </li>
-              ))}
-            </ul>
+            {arrayMaping(access.itemA, s.itemsList, s.text, s.textItem)}
             <Submit />
           </div>
           <img className={s.images} src={images[0]} alt="" />
@@ -45,24 +39,21 @@ export default function AccessSystems() {
           <img className={s.images} src={images[1]} alt="" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
-              {access.content[1]}
+              {access.itemTitles[1]}
             </p>
-            <ul className={s.accessList}>
-              {access.detailsB.map(detail => (
-                <li key={getID()} className={s.text}>
-                  <p className={s.textItem}>{detail}</p>
-                </li>
-              ))}
-            </ul>
+            {arrayMaping(access.itemB, s.itemsList, s.text, s.textItem)}
             <Submit />
           </div>
         </li>
         <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
-              {access.content[2]}
+              {access.itemTitles[2]}
             </p>
-            {/* <p className={s.text}>{access.details[2]}</p> */}
+
+            <p className={`${s.subheadItems}`}>{access.itemC}</p>
+            {arrayMaping(access.itemCArray, s.itemsList, s.text, s.textItem)}
+
             <Submit />
           </div>
           <img className={s.images} src={images[2]} alt="" />
@@ -71,7 +62,7 @@ export default function AccessSystems() {
           <img className={s.images} src={images[3]} alt="" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
-              {access.content[3]}
+              {access.itemTitles[3]}
             </p>
             {/* <p className={s.text}>{access.details[1]}</p> */}
             <Submit />
@@ -80,7 +71,7 @@ export default function AccessSystems() {
         <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
-              {access.content[4]}
+              {access.itemTitles[4]}
             </p>
             <ul className={s.accessList}>
               <li className={s.text}>
@@ -101,7 +92,7 @@ export default function AccessSystems() {
           <img className={s.images} src={images[5]} alt="" />
           <div className={s}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
-              {access.content[5]}
+              {access.itemTitles[5]}
             </p>
             {/* <p className={s.text}>{access.details[1]}</p> */}
             <Submit />
