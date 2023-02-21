@@ -11,6 +11,11 @@ const about = {
   part2:
     'We are trusted to solve the most complex and non-standard issues. We cooperate with many design and construction organizations. Since all technologies are constantly changing and improving, our engineers and installers are also regularly trained and trained. We are in constant development.',
   consulingTitle: 'Within the consulting activity:',
+  consulting: [
+    'We provide a qualified independent expert assessment of the existing project and its budget value',
+    'If necessary, we optimize or improve existing projects',
+    'We develop new projects, offer our solutions',
+  ],
   consulting1:
     'We provide a qualified independent expert evaluation of the existing project and its budget value.',
   consulting2: 'We optimize or improve existing projects if necessary',
