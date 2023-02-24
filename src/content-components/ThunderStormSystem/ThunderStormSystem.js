@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import Submit from 'tools/Submit';
 import io from 'tools/io';
+import arrayMaping from 'tools/arrayMaping';
 
 export default function ThunderStormSystem() {
   const currentLanguage = useSelector(getLanguageMemoised);
@@ -25,17 +26,13 @@ export default function ThunderStormSystem() {
       <ul className={s}>
         <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
+            <div className={s.test}></div>
             <h3 className={`${s.subhead} ${s.subheadItems}`}>
               {thunder.itemTitle[0]}
             </h3>
-            <ul className={s.thunderList}>
-              {thunder.solutions.map(item => (
-                <li key={getID()} className={s.text}>
-                  <p className={s.textItem}>{item}</p>
-                </li>
-              ))}
-              <Submit />
-            </ul>
+            {arrayMaping(thunder.solutions, s.itemsList, s.text, s.textItem)}
+            <div className={s.test}></div>
+            <Submit />
           </div>
           <img
             className={s.images}

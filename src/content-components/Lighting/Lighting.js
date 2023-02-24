@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import Submit from 'tools/Submit';
 import io from 'tools/io';
-
+import arrayMaping from 'tools/arrayMaping';
 export default function LANContent() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { lighting } = LangContentSelector(currentLanguage);
@@ -16,6 +16,7 @@ export default function LANContent() {
   // -------------------------IO---------------------------
   useEffect(() => {
     io();
+    // io('contentItems', '-20%');
   }, []);
   // ------------------------------------------------------
 
@@ -29,19 +30,15 @@ export default function LANContent() {
         <ul className={s}>
           <li className={s.contentItems} id="contentItems">
             <div className={s.itemText}>
+              <div className={s.test}></div>
               <p className={`${s.subhead} ${s.subheadItems}`}>
                 {lighting.solutions[0]}
               </p>
-              {/* <p className={`${s.subheadItems}`}>{lighting.details[0]}</p> */}
-              <ul className={s.lightingList}>
-                {lighting.context1.map(text => (
-                  <li className={s.text} key={getID()}>
-                    <p className={s.textItem}>{text}</p>
-                  </li>
-                ))}
-              </ul>
+              {arrayMaping(lighting.context1, s.itemsList, s.text, s.textItem)}
               <Submit />
+              <div className={s.test}></div>
             </div>
+
             <img src={slide1} className={s.images} alt="content" />
           </li>
 

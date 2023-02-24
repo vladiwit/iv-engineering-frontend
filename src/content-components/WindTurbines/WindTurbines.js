@@ -6,6 +6,7 @@ import LangContentSelector from '../../additional-components/LanguageContentSele
 import Submit from 'tools/Submit';
 import images from 'utils/db/images-db/wind-images';
 import io from 'tools/io';
+import arrayMaping from 'tools/arrayMaping';
 
 export default function WindSystems() {
   const currentLanguage = useSelector(getLanguageMemoised);
@@ -13,6 +14,7 @@ export default function WindSystems() {
   // -------------------------IO---------------------------
   useEffect(() => {
     io();
+    // io('contentItems', '-20%');
   }, []);
   // ------------------------------------------------------
   return (
@@ -27,16 +29,13 @@ export default function WindSystems() {
       <ul className={s}>
         <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
+            <div className={s.test}></div>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {wind.details[0]}
             </p>
-            <ul className={s.windList}>
-              {wind.texts1.map((text, i) => (
-                <li key={i} className={s.text}>
-                  <p className={s.textItem}>{text}</p>{' '}
-                </li>
-              ))}
-            </ul>
+            {arrayMaping(wind.texts1, s.itemsList, s.text, s.textItem)}
+            <div className={s.test}></div>
+
             <Submit />
           </div>
           <img className={s.images} src={images[0]} alt="" />
@@ -49,13 +48,7 @@ export default function WindSystems() {
             </p>
             <div className={s.itemText}>
               <i className={`${s.text} ${s.textItem}`}>{wind.details[1]}</i>
-              <ul className={s.windList}>
-                {wind.texts2.map((text, i) => (
-                  <li key={i} className={s.text}>
-                    <p className={s.textItem}>{text}</p>
-                  </li>
-                ))}
-              </ul>
+              {arrayMaping(wind.texts2, s.itemsList, s.text, s.textItem)}
             </div>
             <Submit />
           </div>

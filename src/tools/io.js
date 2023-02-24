@@ -3,7 +3,7 @@ import s from '../utils/styles/main.scss';
 
 // ---------
 
-const io = (id = 'contentItems', rootMargin = '-14%', className = 'active') => {
+const io = (id = 'contentItems', rootMargin = '-5%', className = 'active') => {
   const mainCallback = entries => {
     // console.log(entries);
     entries.forEach(entry => {
@@ -16,12 +16,12 @@ const io = (id = 'contentItems', rootMargin = '-14%', className = 'active') => {
 
   const options = {
     rootMargin,
-    threshold: 0.4,
+    threshold: 0.15,
   };
   const observer = new IntersectionObserver(mainCallback, options);
   // const targets = document.querySelectorAll('#contentItems');
   const targets = document.querySelectorAll(`#${id}`);
-  // console.log('TARGET_ARRAY:::::', targets);
+  console.log('TARGET_ARRAY:::::', targets);
 
   targets.forEach(target => observer.observe(target));
 };
