@@ -4,7 +4,6 @@ import { IoClose } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSavedPrevPath } from 'redux/content/content-selectors';
 import { NavLink } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
 import { savedPrevPath, detailsAction } from 'redux/content/content-actions';
 import operations from 'redux/submit/submit-operations';
 import removeContentStorage from 'tools/removeLocalStorageContent';
@@ -32,22 +31,14 @@ export default function CloseButton(children) {
   };
   return (
     <>
-      <CSSTransition
-        in={true}
-        appear={true}
-        classNames={s}
-        timeout={2000}
-        unmountOnExit
-      >
-        <NavLink to={savedPath}>
-          <button
-            onClick={() => combineActionsCloseButon('')}
-            className={s.buttonClose}
-          >
-            <IoClose className={s.iconClose} />
-          </button>
-        </NavLink>
-      </CSSTransition>
+      <NavLink to={savedPath}>
+        <button
+          onClick={() => combineActionsCloseButon('')}
+          className={s.buttonClose}
+        >
+          <IoClose className={s.iconClose} />
+        </button>
+      </NavLink>
     </>
   );
 }

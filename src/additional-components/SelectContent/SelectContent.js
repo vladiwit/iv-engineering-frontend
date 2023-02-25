@@ -29,14 +29,7 @@ export default function SelectContent(props) {
 
   return (
     <>
-      {/* <CSSTransition
-        in={true}
-        appear={true}
-        timeout={1000}
-        unmountOnExit
-        classNames={s}
-      > */}
-      <section>
+      <section className={s.contentSelection}>
         <Suspense fallback={<h2>Loading...</h2>}>
           {path.hash === hashes[0] && <LANContent />}
           {path.hash === hashes[1] && <Itsecurity />}
@@ -57,7 +50,6 @@ export default function SelectContent(props) {
           {path.hash === hashes[15] && <NotFoundPage />}
         </Suspense>
       </section>
-      {/* </CSSTransition> */}
       <CloseButton />
     </>
   );

@@ -2,21 +2,8 @@
 @import 'utils/styles/heads';
 @import 'utils/styles/details-animation.module.scss';
 
-.details{
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  height:auto;
-  background-color:black;
-  // background-color:transparent;
-  color: $text-primary-color;
-  // outline: 3px solid red;
-}
 
-.title{
-  color: #fff;
+.contentSelection{
+  animation: animate100 800ms $timing-function forwards;
+  
 }

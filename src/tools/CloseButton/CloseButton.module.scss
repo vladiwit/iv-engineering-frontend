@@ -1,9 +1,9 @@
 @import 'utils/styles/main.scss';
-@import 'utils/styles/closeButtonAnimation';
+// @import 'utils/styles/closeButtonAnimation';
 
 .buttonClose{
   position: fixed;
-  top:100px;
+  top:115px;
   margin: 5px;
   padding: 10px 10px;
   background-color: transparent;
@@ -12,11 +12,12 @@
   border: none;
   cursor: pointer;
   z-index: 100;
+  // outline: 1px solid red;
+  animation: animate200 2000ms $timing-function forwards;
 }
 
 .iconClose{
   display: inline-block;
-  // display: block;
   width: 15px;
   height: 15px;
   fill:$accent-primary-color;
