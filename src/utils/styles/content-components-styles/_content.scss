@@ -30,9 +30,9 @@
   }
 
   .test{
-    display: block;
+    // display: block;
     content: none;
-    height: 100px;
+    // height: 100px;
   }
 }
 
@@ -45,8 +45,11 @@
   // min-height: 800px;
   min-height: 400px;
   }
+
   .test{
-    height: 200px;
+    display: block;
+    height:200px;
   }
   
 }
+    
