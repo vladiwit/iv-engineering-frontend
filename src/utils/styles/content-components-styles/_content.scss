@@ -8,8 +8,7 @@
 }
 
 .test{
-  content: none;
-  height: 200px;
+  display: none;
 }
 
 
@@ -29,7 +28,13 @@
   min-height: 250px;
 
   }
+
+  .test{
+    content: none;
+    height: 100px;
+  }
 }
+
 @media screen and (min-width: $desktop) {
   .contentItems {
     display: flex;
@@ -39,4 +44,8 @@
   // min-height: 800px;
   min-height: 400px;
   }
+  .test{
+    height: 200px;
+  }
+  
 }

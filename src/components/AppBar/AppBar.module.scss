@@ -4,38 +4,35 @@
 //   position: fixed;
 // }
 
-
 .header{
   position: fixed;
   top: 0;
   display: block;
   width: 100%;
   z-index: 20;
-    // box-sizing: border-box;
-    // margin-bottom: 30px;
     border-bottom: 1px solid #2a363b;
     shadow: 3px #606060 ;
     background-color: black;
 }
 
 .logo{
-  display: block;
+  display: inline-block;
     box-sizing: border-box;
     color: $accent-primary-color;
-    margin: 5px  20px 20px;
+    margin: 5px  0 20px 20px;
   font-size: 14px;
 }
 
 @media screen and (min-width: $mobile) {
     .logo{
-        margin: 10px  20px 20px;
+        margin: 10px  0  20px 20px;
   font-size: 14px;
     }
   }
   
   @media screen and (min-width: $tablet) {
     .logo {
-        margin: 15px  30px 25px;
+        margin: 15px  0  25px  30px;
 
   font-size: 22px;
     }
@@ -43,7 +40,7 @@
   
   @media screen and (min-width: $desktop) {
     .logo {
-        margin: 20px  50px 25px;
+        margin: 20px  0 25px 50px;
   font-size: 28px;
     }
   }

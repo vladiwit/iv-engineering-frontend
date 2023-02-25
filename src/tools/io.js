@@ -21,7 +21,7 @@ const io = (id = 'contentItems', rootMargin = '-5%', className = 'active') => {
   const observer = new IntersectionObserver(mainCallback, options);
   // const targets = document.querySelectorAll('#contentItems');
   const targets = document.querySelectorAll(`#${id}`);
-  console.log('TARGET_ARRAY:::::', targets);
+  // console.log('TARGET_ARRAY:::::', targets);
 
   targets.forEach(target => observer.observe(target));
 };
