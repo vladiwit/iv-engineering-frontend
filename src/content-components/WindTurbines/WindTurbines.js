@@ -8,7 +8,7 @@ import images from 'utils/db/images-db/wind-images';
 import io from 'tools/io';
 import arrayMaping from 'tools/arrayMaping';
 
-export default function WindSystems() {
+export default function WindTurbines() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { wind } = LangContentSelector(currentLanguage);
   // -------------------------IO---------------------------
@@ -35,7 +35,6 @@ export default function WindSystems() {
             </p>
             {arrayMaping(wind.texts1, s.itemsList, s.text, s.textItem)}
             <div className={s.test}></div>
-
             <Submit />
           </div>
           <img className={s.images} src={images[0]} alt="" />

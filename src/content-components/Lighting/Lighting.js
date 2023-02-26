@@ -8,7 +8,8 @@ import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import Submit from 'tools/Submit';
 import io from 'tools/io';
 import arrayMaping from 'tools/arrayMaping';
-export default function LANContent() {
+
+export default function Lighting() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { lighting } = LangContentSelector(currentLanguage);
   const { slide1, slide2, slide3, slide4, slide5, slide6 } = images;
@@ -19,7 +20,6 @@ export default function LANContent() {
     // io('contentItems', '-20%');
   }, []);
   // ------------------------------------------------------
-
   return (
     <>
       <section className={s.lighting}>

@@ -7,6 +7,7 @@ import Submit from 'tools/Submit';
 import images from 'utils/db/images-db/alarm';
 import io from 'tools/io';
 import arrayMaping from 'tools/arrayMaping';
+
 export default function AlarmSystems() {
   const currentLanguage = useSelector(getLanguageMemoised);
   const { alarm } = LangContentSelector(currentLanguage);
