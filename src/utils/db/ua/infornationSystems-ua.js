@@ -1,4 +1,4 @@
-export default {
+const informsystems = {
   head: 'Передавання даних',
   subhead:
     'Надаємо рішення системної інтеграції у сегменті побудови мереж передачі даних',
@@ -28,3 +28,5 @@ export default {
     // },
   ],
 };
+
+export default informsystems;

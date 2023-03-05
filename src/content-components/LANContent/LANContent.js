@@ -21,54 +21,86 @@ export default function LANContent() {
     <>
       <section className={s.lan}>
         <h2 className={s.heads}>{lan.head}</h2>
-        <p className={s.pain}>{lan.pain}</p>
+        <p className={s.pain} style={{ marginBottom: '30px' }}>
+          {lan.pain}
+        </p>
         <b className={s.subhead}>{lan.subhead[0]}</b>
-
-        <ul className={s}>
+        <ul>
           <li className={s.contentItems} id="contentItems">
             <div className={s.itemText}>
-              <p className={`${s.subhead} ${s.subheadItems}`}>
+              <p className={`${s.subhead} ${s.subheadItems} `}>
                 {lan.solutions[0]}
               </p>
 
               <ul className={s.contentLanList}>
                 <li>
-                  <p className={`${s.subhead}`}>
+                  <p className={`${s.subheadItems}`}>
                     {lanDirections.contentLAN[0]}
                   </p>
-                  <ul className={s.lanList}>
+                  {arrayMaping(
+                    lanDirections.detailsDATA,
+                    s.lanList,
+                    s.text,
+                    s.textItem,
+                  )}
+
+                  {/* <ul className={s.lanList}>
                     {lanDirections.detailsDATA.map((detail, i) => (
                       <li key={i} className={s.text}>
                         <p className={s.textItem}>{detail}</p>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </li>
                 <li>
-                  <p className={`${s.subhead}`}>
+                  <p className={`${s.subheadItems}`}>
                     {lanDirections.contentLAN[1]}
                   </p>
-                  <ul className={s.lanList}>
+                  {arrayMaping(
+                    lanDirections.detailsSCS,
+                    s.lanList,
+                    s.text,
+                    s.textItem,
+                  )}
+
+                  {/* <ul className={s.lanList}>
                     {lanDirections.detailsSCS.map((detail, i) => (
                       <li key={i} className={s.text}>
                         <p className={s.textItem}>{detail}</p>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </li>
 
                 <li>
-                  <p className={`${s.subhead}`}>
+                  <p className={`${s.subheadItems}`}>
                     {lanDirections.contentLAN[2]}
                   </p>
-                  <ul className={s.lanList}>
+                  {arrayMaping(
+                    lanDirections.detailsLAN,
+                    s.lanList,
+                    s.text,
+                    s.textItem,
+                  )}
+                  {/* <ul className={s.lanList}>
                     {lanDirections.detailsDATA.map((detail, i) => (
                       <li key={i} className={s.text}>
                         <p className={s.textItem}>{detail}</p>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </li>
+                {/* <li>
+                  <p className={`${s.subheadItems}`}>
+                    {lanDirections.contentLAN[3]}
+                  </p>
+                  {arrayMaping(
+                    lanDirections.lanIntegration,
+                    s.lanList,
+                    s.text,
+                    s.textItem,
+                  )}
+                </li> */}
               </ul>
 
               <Submit />
