@@ -1,26 +1,26 @@
-import heroRu from 'utils/db/ru/hero-ru.json';
-import naviRu from 'utils/db/ru/navigation-ru.json';
-import infornationSystemsRu from 'utils/db/ru/infornationSystems-ru.js';
-import securityRu from 'utils/db/ru/securitysystems-ru.json';
-import alternativeEnergyRu from 'utils/db/ru/alternativeEnergy-ru.js';
-import lanRu from 'utils/db/ru/lan-ru.json';
+// import heroRu from 'utils/db/ru/hero-ru.json';
+// import naviRu from 'utils/db/ru/navigation-ru.json';
+// import infornationSystemsRu from 'utils/db/ru/infornationSystems-ru.js';
+// import securityRu from 'utils/db/ru/securitysystems-ru.json';
+// import alternativeEnergyRu from 'utils/db/ru/alternativeEnergy-ru.js';
+// import lanRu from 'utils/db/ru/lan-ru.json';
 
-import itsecurityRu from 'utils/db/ru/itsecurity-ru.json';
-import videosurvilanceRu from 'utils/db/ru/videosurvilance-ru.json';
-import alarmRu from 'utils/db/ru/alarm-ru.json';
-import accessRu from 'utils/db/ru/access-ru.json';
-import fireRu from 'utils/db/ru/fire-ru.json';
-import thunderRu from 'utils/db/ru/thunder-ru.json';
-import windRu from 'utils/db/ru/wind-ru.json';
-import lightingRu from 'utils/db/ru/lighting-ru.json';
-import solidFuelRu from 'utils/db/ru/solidFuelHeating-ru.json';
-import solarEnergyRu from 'utils/db/ru/solarEnergy-ru.json';
-import aboutRu from 'utils/db/ru/about-ru.js';
-import submitRu from 'utils/db/ru/submit-ru.json';
-import submitFormRu from 'utils/db/ru/submitForm-ru.json';
-import gratefulLetterRu from 'utils/db/ru/gratefulLetter-ru.js';
-import alertSubmitRu from 'utils/db/ru/alertSubmit-ru.js';
-import footerRu from 'utils/db/ru/footer-ru.json';
+// import itsecurityRu from 'utils/db/ru/itsecurity-ru.json';
+// import videosurvilanceRu from 'utils/db/ru/videosurvilance-ru.json';
+// import alarmRu from 'utils/db/ru/alarm-ru.json';
+// import accessRu from 'utils/db/ru/access-ru.json';
+// import fireRu from 'utils/db/ru/fire-ru.json';
+// import thunderRu from 'utils/db/ru/thunder-ru.json';
+// import windRu from 'utils/db/ru/wind-ru.json';
+// import lightingRu from 'utils/db/ru/lighting-ru.json';
+// import solidFuelRu from 'utils/db/ru/solidFuelHeating-ru.json';
+// import solarEnergyRu from 'utils/db/ru/solarEnergy-ru.json';
+// import aboutRu from 'utils/db/ru/about-ru.js';
+// import submitRu from 'utils/db/ru/submit-ru.json';
+// import submitFormRu from 'utils/db/ru/submitForm-ru.json';
+// import gratefulLetterRu from 'utils/db/ru/gratefulLetter-ru.js';
+// import alertSubmitRu from 'utils/db/ru/alertSubmit-ru.js';
+// import footerRu from 'utils/db/ru/footer-ru.json';
 
 import heroEn from 'utils/db/en/hero-en.json';
 import naviEn from 'utils/db/en/navigation-en.json';
@@ -32,7 +32,7 @@ import lanDirectionEn from 'utils/db/en/LAN-direction-en.js';
 import itsecurityEn from 'utils/db/en/itsecurity-en.json';
 import videosurvilanceEn from 'utils/db/en/videosurvilance-en.json';
 import alarmEn from 'utils/db/en/alarm-en.json';
-import accessEn from 'utils/db/en/access-en.json';
+import accessEn from 'utils/db/en/access-en.js';
 import fireEn from 'utils/db/en/fire-en.json';
 import thunderEn from 'utils/db/en/thunder-en.json';
 import windEn from 'utils/db/en/wind-en.json';
@@ -56,7 +56,7 @@ import lanDirectionUA from 'utils/db/ua/LAN-direction-ua.js';
 import itsecurityUa from 'utils/db/ua/itsecurity-ua.json';
 import videosurvilanceUa from 'utils/db/ua/videosurvilance-ua.json';
 import alarmUa from 'utils/db/ua/alarm-ua.json';
-import accessUa from 'utils/db/ua/access-ua.json';
+import accessUa from 'utils/db/ua/access-ua.js';
 import fireUa from 'utils/db/ua/fire-ua.json';
 import thunderUa from 'utils/db/ua/thunder-ua.json';
 import windUa from 'utils/db/ua/wind-ua.json';
@@ -71,31 +71,31 @@ import footerUa from 'utils/db/ua/footer-ua.json';
 import lightingUa from 'utils/db/ua/lighting-ua.json';
 
 const LangContentSelector = currentLanguage => {
-  const ru = {
-    hero: heroRu,
-    navigation: naviRu,
-    infornationSystems: infornationSystemsRu,
-    securitysystems: securityRu,
-    alternativeEnergy: alternativeEnergyRu,
-    lan: lanRu,
-    lanDirections: lanDirectionUA,
-    itsecurity: itsecurityRu,
-    videosurvilance: videosurvilanceRu,
-    alarm: alarmRu,
-    access: accessRu,
-    fire: fireRu,
-    thunder: thunderRu,
-    wind: windRu,
-    lighting: lightingRu,
-    solidFuel: solidFuelRu,
-    solarEnergy: solarEnergyRu,
-    about: aboutRu,
-    submit: submitRu,
-    submitForm: submitFormRu,
-    gratefulLetter: gratefulLetterRu,
-    alertSubmit: alertSubmitRu,
-    footer: footerRu,
-  };
+  // const ru = {
+  //   hero: heroRu,
+  //   navigation: naviRu,
+  //   infornationSystems: infornationSystemsRu,
+  //   securitysystems: securityRu,
+  //   alternativeEnergy: alternativeEnergyRu,
+  //   lan: lanRu,
+  //   lanDirections: lanDirectionUA,
+  //   itsecurity: itsecurityRu,
+  //   videosurvilance: videosurvilanceRu,
+  //   alarm: alarmRu,
+  //   access: accessRu,
+  //   fire: fireRu,
+  //   thunder: thunderRu,
+  //   wind: windRu,
+  //   lighting: lightingRu,
+  //   solidFuel: solidFuelRu,
+  //   solarEnergy: solarEnergyRu,
+  //   about: aboutRu,
+  //   submit: submitRu,
+  //   submitForm: submitFormRu,
+  //   gratefulLetter: gratefulLetterRu,
+  //   alertSubmit: alertSubmitRu,
+  //   footer: footerRu,
+  // };
   const en = {
     hero: heroEn,
     navigation: naviEn,
@@ -147,8 +147,8 @@ const LangContentSelector = currentLanguage => {
     footer: footerUa,
   };
   switch (currentLanguage) {
-    case 'RU':
-      return ru;
+    // case 'RU':
+    //   return ru;
     case 'EN':
       return en;
     case 'UA':

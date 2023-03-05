@@ -50,7 +50,8 @@ export default function ThunderStormSystem() {
             <h3 className={`${s.subhead} ${s.subheadItems}`}>
               {thunder.itemTitle[1]}
             </h3>
-            <p className={s.text}>{thunder.new}</p>
+            {/* <p className={s.text}>{thunder.new}</p> */}
+            <p className={s.subheadItems}>{thunder.new}</p>
             <Submit />
           </div>
         </li>
