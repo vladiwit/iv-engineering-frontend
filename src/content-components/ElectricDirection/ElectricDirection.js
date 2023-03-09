@@ -4,98 +4,113 @@ import { useEffect } from 'react';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import LangContentSelector from '../../additional-components/LanguageContentSelector';
 import Submit from 'tools/Submit';
-import images from 'utils/db/images-db/alarm';
+import images from 'utils/db/images-db/electric';
 import io from 'tools/io';
+import LanguageContent from 'additional-components/LanguageContent';
+import arrayMaping from 'tools/arrayMaping';
 
 export default function AlarmSystems() {
-  const currentLanguage = useSelector(getLanguageMemoised);
-  const { alarm } = LangContentSelector(currentLanguage);
+  const electric = LanguageContent('electric');
   // -------------------------IO---------------------------
   useEffect(() => {
     io();
   }, []);
   // ------------------------------------------------------
   return (
-    <section className={s.alarm}>
-      <h2 className={s.heads}>{alarm.head}</h2>
-      <p className={s.pain}>{alarm.pain}</p>
-      <b className={s.subhead}>{alarm.subhead[0]}</b>
+    <section className={s.electric}>
+      <h2 className={s.heads}>{electric.head}</h2>
+      {/* <p className={s.pain}>{electric.pain}</p> */}
+      <b className={s.subhead}>{electric.subhead[0]}</b>
       <ul>
-        <li className={`${s.contentItems} elItems`}>
+        {/* -----------Внутрішні роботи------------- */}
+        <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
-            <p className={`${s.subhead} ${s.subheadItems}`}>
-              {alarm.content[0]}
+            <h4 className={`${s.subhead} ${s.subheadItems}`}>
+              {electric.internalWorkTitle}
+            </h4>
+            <p className={`${s.subheadItems}`}>
+              {electric.internalWorkSubtitle}
             </p>
-            <p className={`${s.subheadItems}`}>{alarm.details[0]}</p>
+            {arrayMaping(
+              electric.internalWork,
+              s.itemsList,
+              s.text,
+              s.textItem,
+            )}
             <Submit />
           </div>
-          <img className={s.images} src={images[0]} alt="" />
+          <img className={s.images} src={images[0]} alt="electric" />
         </li>
-        <li className={`${s.contentItems} elItems`}>
-          <img className={s.images} src={images[1]} alt="" />
+
+        {/* -----------Розподільчі щити------------- */}
+        <li className={s.contentItems} id="contentItems">
+          <img className={s.images} src={images[1]} alt="electric" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
-              {alarm.content[1]}
+              {electric.vruTitle}
             </p>
-            <p className={`${s.subheadItems}`}>{alarm.details[1]}</p>
+            {arrayMaping(electric.vru, s.itemsList, s.text, s.textItem)}
             <Submit />
           </div>
         </li>
-        <li className={`${s.contentItems} elItems`}>
+
+        {/* -----------Блискавкозахист------------- */}
+        <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
-            <p className={`${s.subhead} ${s.subheadItems}`}>
-              {alarm.content[2]}
-            </p>
-            <p className={`${s.subheadItems}`}>{alarm.details[2]}</p>
+            <h4 className={`${s.subhead} ${s.subheadItems}`}>
+              {electric.thunderTitle}
+            </h4>
+            <p className={`${s.subheadItems}`}>{electric.thunderSubtitle}</p>
+            {arrayMaping(electric.thunder, s.itemsList, s.text, s.textItem)}
             <Submit />
           </div>
-          <img className={s.images} src={images[2]} alt="" />
+          <img className={s.images} src={images[2]} alt="electric" />
+        </li>
+
+        {/* -------------------КТП------------------ */}
+
+        <li className={s.contentItems} id="contentItems">
+          <img className={s.images} src={images[3]} alt="ktp" />
+          <div className={s.itemText}>
+            <h4 className={`${s.subhead} ${s.subheadItems}`}>
+              {electric.ktpTitle}
+            </h4>
+            <p className={`${s.subheadItems}`}>{electric.ktpSubtitle}</p>
+            {arrayMaping(electric.ktp, s.itemsList, s.text, s.textItem)}
+          </div>
+        </li>
+
+        {/* -----------Інтеграція з альтернативними джерелами------------- */}
+
+        <li className={s.contentItems} id="contentItems">
+          <div className={s.itemText}>
+            <h4 className={`${s.subhead} ${s.subheadItems}`}>
+              {electric.integrationTitle}
+            </h4>
+            {/* <p className={s.subhead}>{electric.integrationSubtitle}</p> */}
+            {arrayMaping(electric.integration, s.itemsList, s.text, s.textItem)}
+            <Submit />
+          </div>
+          <img className={s.images} src={images[4]} alt="electric" />
         </li>
       </ul>
-      <div className={s.works}>
-        <b className={`${s.subhead} ${s.worksTitle}`}>{alarm.subhead[1]}</b>
+      {/* <div className={s.works}>
+        <b className={`${s.subhead} ${s.worksTitle}`}>{electric.subhead[1]}</b>
         <ul className={s.worksList}>
           <li className={s.worksItem}>
-            <p className={s.worksContent}> {alarm.works[0]} </p>
+            <p className={s.worksContent}> {electric.works[0]} </p>
             <img className={s.worksImages} src={images[3]} alt="" />
           </li>
           <li className={s.worksItem}>
-            <p className={s.worksContent}> {alarm.works[1]} </p>
+            <p className={s.worksContent}> {electric.works[1]} </p>
             <img className={s.worksImages} src={images[4]} alt="" />
           </li>
           <li className={s.worksItem}>
-            <p className={s.worksContent}> {alarm.works[2]} </p>
+            <p className={s.worksContent}> {electric.works[2]} </p>
             <img className={s.worksImages} src={images[5]} alt="" />
           </li>
         </ul>
-      </div>
+      </div> */}
     </section>
   );
 }
-
-// -------------------------IO---------------------------
-// const cb = entries => {
-//   // console.log('ENRTIES IN CB::::::', entries);
-//   entries.forEach((entry, i) => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add(`${s.active}`);
-//       // observer.unobserve(entry);
-//     }
-//   });
-// };
-
-// const options = {
-//   // rootMargin: '-200px',
-//   // threshold: 0.3,
-// };
-
-// const observer = new IntersectionObserver(cb, options);
-
-// useEffect(() => {
-//   const targets = document.querySelectorAll('.elItems');
-//   // console.log('TARGET_ARRAY:::::', targets);
-
-//   targets.forEach(target => observer.observe(target));
-// }, []);
-
-// ---------------------------------------------------------------

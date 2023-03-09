@@ -22,8 +22,9 @@ export default function AccessSystems() {
       <h2 className={s.heads}>{access.head}</h2>
       <p className={s.pain}>{access.pain}</p>
       <b className={s.subhead}>{access.subhead[0]}</b>
-
       <ul>
+        {/* -----------------Simple systems---------------------- */}
+
         <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -35,6 +36,9 @@ export default function AccessSystems() {
           <img className={s.images} src={images[0]} alt="" />
           {/* <img className={`s.${className}`} src={images[0]} alt="" /> */}
         </li>
+
+        {/* -----------------Domofom systems---------------------- */}
+
         <li className={s.contentItems} id="contentItems">
           <img className={s.images} src={images[1]} alt="" />
           <div className={s.itemText}>
@@ -45,30 +49,37 @@ export default function AccessSystems() {
             <Submit />
           </div>
         </li>
+
+        {/* -----------------Multiterminals---------------------- */}
+
         <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {access.itemTitles[2]}
             </p>
-
             <p className={`${s.subheadItems}`}>{access.itemC}</p>
             {arrayMaping(access.itemCArray, s.itemsList, s.text, s.textItem)}
-
             <Submit />
           </div>
           <img className={s.images} src={images[2]} alt="" />
         </li>
+
+        {/* -----------------Hotel systems---------------------- */}
+
         <li className={s.contentItems} id="contentItems">
           <img className={s.images} src={images[3]} alt="" />
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
               {access.itemTitles[3]}
             </p>
-            <p className={`${s.subheadItems}`}>{access.itemD}</p>
+            <p className={s.subheadItems}>{access.itemD}</p>
             {arrayMaping(access.itemDArray, s.itemsList, s.text, s.textItem)}
             <Submit />
           </div>
         </li>
+
+        {/* -----------------HiSec systems---------------------- */}
+
         <li className={s.contentItems} id="contentItems">
           <div className={s.itemText}>
             <p className={`${s.subhead} ${s.subheadItems}`}>
@@ -76,19 +87,26 @@ export default function AccessSystems() {
             </p>
             <ul className={s.accessList}>
               <li className={s.text}>
-                <a href={link.vein} target="_blank" rel="noreferrer">
-                  <p className={` ${s.link}`}>{access.linkTitle}</p>
+                <a
+                  href={link.vein}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={s.link}
+                >
+                  <p className={s.textItem}>{access.details2[0]}</p>
                 </a>
               </li>
               <li className={s.text}>
-                <p className={`  ${s.textItem}`}>{access.details2}</p>
+                <p className={s.textItem}>{access.details2[1]}</p>
               </li>
             </ul>
-
             <Submit />
           </div>
           <img className={s.images} src={images[4]} alt="" />
         </li>
+
+        {/* -----------------Platform systems---------------------- */}
+
         <li className={s.contentItems} id="contentItems">
           <img className={s.images} src={images[5]} alt="" />
           <div className={s}>
@@ -100,6 +118,9 @@ export default function AccessSystems() {
           </div>
         </li>
       </ul>
+
+      {/* -------------------------------IN-------------------------------- */}
+
       <b className={`${s.subhead} ${s.worksTitle}`}>{access.subhead[1]}</b>
       <ul className={s.worksList}>
         <li className={s.worksItems}>

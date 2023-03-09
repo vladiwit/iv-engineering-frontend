@@ -1,13 +1,13 @@
-export default {
+const energy = {
   head: 'Standart and alternative Energy directions',
   subhead: 'New Engineering Solutions for comfortable business and life',
 
   Content: [
-    // {
-    //   id: 'ElDir-1',
-    //   content: 'Electric direction',
-    //   details: 'electric',
-    // },
+    {
+      id: 'ElDir-1',
+      content: 'Electric direction',
+      details: 'electric',
+    },
     {
       id: 'AlEn-1',
       content: 'Wind generators',
@@ -43,3 +43,5 @@ export default {
     // },
   ],
 };
+
+export default energy;

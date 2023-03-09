@@ -8,7 +8,7 @@
 }
 
 .active{
-   animation: animate200 300ms $timing-function forwards;
+   animation: animate200 1000ms $timing-function forwards;
 }
 
   // --------------------------------------
@@ -36,7 +36,7 @@
       opacity: 0;
     }
   
-    30% {
+    25% {
       opacity: 0;
     }
   

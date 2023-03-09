@@ -45,6 +45,7 @@ import submitFormEn from 'utils/db/en/submitForm-en.json';
 import gratefulLetterEn from 'utils/db/en/gratefulLetter-en.js';
 import alertSubmitEn from 'utils/db/en/alertSubmit-en.js';
 import footerEn from 'utils/db/en/footer-en.json';
+import electricEn from 'utils/db/en/electric-en.js';
 
 import heroUa from 'utils/db/ua/hero-ua.json';
 import naviUa from 'utils/db/ua/navigation-ua.json';
@@ -69,6 +70,7 @@ import gratefulLetterUa from 'utils/db/ua/gratefulLetter-ua.js';
 import alertSubmitUa from 'utils/db/ua/alertSubmit-ua.js';
 import footerUa from 'utils/db/ua/footer-ua.json';
 import lightingUa from 'utils/db/ua/lighting-ua.json';
+import electricUa from 'utils/db/ua/electric-ua.js';
 
 const LangContentSelector = currentLanguage => {
   // const ru = {
@@ -120,6 +122,7 @@ const LangContentSelector = currentLanguage => {
     gratefulLetter: gratefulLetterEn,
     alertSubmit: alertSubmitEn,
     footer: footerEn,
+    electric: electricEn,
   };
   const ua = {
     hero: heroUa,
@@ -145,6 +148,7 @@ const LangContentSelector = currentLanguage => {
     gratefulLetter: gratefulLetterUa,
     alertSubmit: alertSubmitUa,
     footer: footerUa,
+    electric: electricUa,
   };
   switch (currentLanguage) {
     // case 'RU':

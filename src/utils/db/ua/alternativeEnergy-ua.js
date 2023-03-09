@@ -1,14 +1,14 @@
-export default {
+const energy = {
   head: ' Традиційна та альтернативна енергетика',
   subhead:
     'Послуги та рішення альтернативної енергетики з використанням нових технологій',
 
   Content: [
-    // {
-    //   id: 'ElDir-1',
-    //   content: 'Електротехнічний напрямок',
-    //   details: 'electric',
-    // },
+    {
+      id: 'ElDir-1',
+      content: 'Електротехнічний напрямок',
+      details: 'electric',
+    },
     {
       id: 'AlEn-1',
       content: 'Вітрогенератори ',
@@ -45,3 +45,5 @@ export default {
     // },
   ],
 };
+
+export default energy;
