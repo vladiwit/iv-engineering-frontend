@@ -1,5 +1,6 @@
  @import 'utils/styles/main.scss';  
  @import 'utils/styles/slider-animation';
+ @import 'utils/styles/animation';
 
 .backdrop{
 position: absolute;
@@ -8,6 +9,8 @@ position: absolute;
 background-color: black;
 z-index: -10;
 }
+
+
 
 
 .slider{

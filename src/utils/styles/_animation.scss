@@ -1,4 +1,8 @@
 
+
+
+
+
 .contactsAnimation{
   animation: animate100 1000ms $timing-function forwards;
 }
@@ -9,6 +13,30 @@
 
 .active{
    animation: animate200 1000ms $timing-function forwards;
+}
+
+
+.activeSlide1{
+  opacity: 0;
+// transform: opacity(0);
+  animation: animateSlide400 3000ms linear  forwards ;
+// outline: 1px solid green;
+// transition-property: opacity(0);
+// transition:  all  1000ms linear;
+}
+
+.activeSlide2{
+  opacity: 0;
+  animation: animateSlide500 3000ms linear forwards  ;
+  // outline: 3px solid red;
+
+}
+
+
+
+.inactive{
+  opacity: 0;
+// outline: 3px solid red;
 }
 
   // --------------------------------------
@@ -45,6 +73,59 @@
     }
   }
 
+
+  @keyframes animateSlide400{
+    0%{
+      opacity: 1;
+    }
+
+    25%{
+
+      opacity: 1;
+    }
+    
+    50%{
+      opacity: 1;
+    }
+    
+    75%{
+      opacity: 1;
+    }
+
+    100%{
+      opacity: 0;
+    }
+      }
+
+
+
+
+  @keyframes animateSlide500{
+0%{
+  opacity: 0;
+}
+
+
+25%{
+
+  opacity: 0;
+}
+
+50%{
+  opacity: 0;
+}
+
+75%{
+  opacity: 0;
+}
+
+100%{
+  opacity: 1;
+}
+  }
+
+
+ 
 
   // .appear{
   //   // transform: translateX(-100%);
