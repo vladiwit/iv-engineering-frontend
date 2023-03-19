@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import LangContentSelector from '../../additional-components/LanguageContentSelector';
 import Submit from 'tools/Submit';
 import images from 'utils/db/images-db/fire-images';
-import getID from 'tools/getID';
 import { getLanguageMemoised } from 'redux/languages/languages-selector';
 import io from 'tools/io';
 import arrayMaping from 'tools/arrayMaping';

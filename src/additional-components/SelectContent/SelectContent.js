@@ -1,6 +1,5 @@
 import s from './SelectContent.module.scss';
 import React, { Suspense } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import routes from 'routes';
 import componentsLoad from '../../componentsLoad';
 import CloseButton from 'tools/CloseButton';

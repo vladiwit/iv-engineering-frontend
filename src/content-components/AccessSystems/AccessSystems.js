@@ -1,6 +1,5 @@
 import s from './AccessSystems.module.scss';
 import { useEffect } from 'react';
-import getID from 'tools/getID';
 import images from 'utils/db/images-db/access';
 import LangContentSelector from '../../additional-components/LanguageContentSelector';
 import { useSelector } from 'react-redux';
